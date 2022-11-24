@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        kaushan: ['Kaushan Script', 'cursive'],
-        k2d: ['K2D', 'sans-serif'],
+        title: ['Kaushan Script', 'cursive'],
+        subtitle: ['K2D', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
       },
     },
