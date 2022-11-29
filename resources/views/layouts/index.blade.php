@@ -7,7 +7,7 @@
   <title>My Tour Bali</title>
   @vite('resources/css/app.css')
 </head>
-<body>
+<body class="pb-96">
   @yield('container')
 </body>
 </html>
