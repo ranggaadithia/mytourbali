@@ -8,7 +8,7 @@
   @vite('resources/css/app.css')
   <link rel="stylesheet" href="icofont/icofont.min.css">
 </head>
-<body class="font-poppins pb-96">
+<body class="font-poppins">
   @yield('container')
 </body>
 </html>

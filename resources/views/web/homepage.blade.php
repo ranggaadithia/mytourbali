@@ -35,8 +35,8 @@
 
   {{-- services --}}
   <section class="services" id="services">
-    <div class="py-20 bg-gray-200 container px-10 md:px-2 lg:px-20">
-      <h1 class="text-3xl font-subtitle text-center mb-5">Services</h1>
+    <div class="py-20 bg-gray-200 container mx-auto px-10 md:px-2 lg:px-20">
+      <h1 class="text-3xl font-subtitle font-semibold text-center mb-5">Services</h1>
 
       <div class="flex flex-col gap-6 md:flex-row justify-center">
         
@@ -75,8 +75,30 @@
         </a>
         
       </div>
-      
-      
+    </div>
+  </section>
+
+  {{-- destinations --}}
+  <section class="destinations" id="destinations">
+    <div class="py-20 px-4 md:px-10">
+      <h1 class="text-3xl text-center font-subtitle font-semibold">Top Destinations</h1>
+
+      <div class="flex flex-row gap-y-4 md:gap-y-4 items-center justify-between mt-3 flex-wrap">
+        @for ($i = 1; $i < 10; $i++)
+        <a href="" class="basis-1/2 md:basis-1/5 px-2 md:px-4">
+          <div class="w-full min-h-full rounded-xl shadow-lg relative overflow-hidden after:content-[''] after:block after:absolute after:inset-0 after:bg-gradient-to-t after:from-black/30 group">
+            <img src="img/pura.jpg" alt="" class="group-hover:scale-110 transition duration-200 ease-in-out">
+            <h4 class="text-white absolute bottom-4 inset-x-1 z-20 text-center font-subtitle text-xl">Garuda Wisnu Kencana (GWK)</h4>
+          </div>
+        </a>
+        @endfor
+        <a href="" class="basis-1/2 md:basis-1/5 px-2 md:px-4">
+          <div class="w-full min-h-full rounded-xl shadow-lg relative overflow-hidden after:content-[''] after:block after:absolute after:inset-0 after:bg-gradient-to-t after:from-black/30 group">
+            <img src="img/klingking.jpg" alt="" class="group-hover:scale-110 transition duration-200 ease-in-out">
+            <h4 class="text-white absolute bottom-4 inset-x-1 z-20 text-center font-subtitle text-xl">Beratan Temple</h4>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
