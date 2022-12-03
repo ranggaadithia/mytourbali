@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>My Tour Bali</title>
   @vite('resources/css/app.css')
+  <link rel="stylesheet" href="icofont/icofont.min.css">
 </head>
 <body class="font-poppins pb-96">
   @yield('container')
