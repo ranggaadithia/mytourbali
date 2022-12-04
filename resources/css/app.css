@@ -22,3 +22,7 @@
 .material-icons {
     @apply text-white;
 }
+
+.title {
+    @apply text-3xl font-subtitle font-semibold text-center mb-5;
+}
