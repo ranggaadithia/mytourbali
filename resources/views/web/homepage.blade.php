@@ -81,17 +81,15 @@
   <section class="destinations" id="destinations">
     <div class="py-20 px-4 md:px-10">
       <h1 class="title">Top Destinations</h1>
-
       <div class="flex flex-row gap-y-4 items-center justify-between flex-wrap">
         @for ($i = 0; $i < 10; $i++)
         <a href="" class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4">
-          <div class="w-full min-h-full rounded-xl shadow-lg relative overflow-hidden after:content-[''] after:block after:absolute after:inset-0 after:bg-gradient-to-t after:from-black/30 group">
-            <img src="img/pura.jpg" alt="" class="group-hover:scale-110 transition duration-200 ease-in-out">
-            <h4 class="text-white absolute bottom-4 inset-x-1 z-20 text-center font-subtitle text-xl">Beratan Temple</h4>
+          <div class="w-full min-h-full rounded-xl shadow-lg relative overflow-hidden after:content-[''] after:block after:absolute after:inset-x-0 after:bottom-0 after:h-20 after:bg-gradient-to-t after:backdrop-blur-xl group">
+            <img src="img/klingking.jpg" alt="" class="group-hover:scale-110 transition duration-300 ease-in-out">
+            <h4 class="text-white absolute bottom-8 inset-x-1 z-20 text-center font-subtitle text-xl">Beratan Temple</h4>
           </div>
         </a>
         @endfor
-        
       </div>
     </div>
   </section>
@@ -104,10 +102,10 @@
         <div class="flex flex-row gap-y-6 items-center justify-between flex-wrap">
           @for ($i = 0; $i < 6; $i++)
           <div class="basis-1/1 md:basis-1/2 lg:basis-1/3 px-2 md:px-6">
-            <div class="w-full min-h-full rounded-xl shadow-lg relative overflow-hidden after:content-[''] after:block after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/30 group">
-              <img src="img/gwk3.jpg" alt="" class="group-hover:scale-110 transition duration-300 ease-in-out">
-              <h4 class="text-white absolute top-6 inset-x-1 z-20 text-center font-subtitle text-xl">Garuda Wisnu Kencana (GWK)</h4>
-              <a href="" class="button absolute bottom-4 z-20">Read More</a>
+            <div class="w-full min-h-full rounded-xl shadow-lg relative flex flex-col justify-between items-center h-96 overflow-hidden after:content-[''] after:block after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/30 group cursor-pointer">
+              <img src="img/airterjun.jpg" alt="" class="absolute w-full h-full group-hover:scale-110 transition duration-300 ease-in-out">
+              <h4 class="text-white mt-10 z-20 text-center font-subtitle text-xl group-hover:mt-12 transition-all duration-300 ease-in-out">Garuda Wisnu Kencana (GWK)</h4>
+              <a href="" class="button hidden mb-5 z-20 group-hover:mb-12 group-hover:inline-block transition-transform duration-300 ease-in-out">Read More</a>
             </div>
           </div>
           @endfor
