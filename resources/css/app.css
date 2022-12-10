@@ -16,7 +16,11 @@
 }
 
 .button {
-    @apply px-4 py-3 bg-emerald-500 rounded-lg text-white shadow-sm transition duration-300 hover:ease-in-out hover:bg-emerald-400 focus:outline-none focus:ring focus:ring-emerald-200;
+    @apply px-4 py-3 bg-emerald-500 rounded-lg text-white shadow-sm transition duration-300 hover:ease-in-out hover:bg-emerald-400 focus:outline-none focus:ring focus:ring-emerald-200 inline-block;
+}
+
+.button-line {
+    @apply px-4 py-3 ring-4 ring-emerald-500 ring-inset rounded-lg text-white shadow-sm transition duration-300 hover:ease-in-out hover:bg-emerald-500 focus:outline-none focus:ring focus:ring-emerald-200;
 }
 
 .material-icons {
