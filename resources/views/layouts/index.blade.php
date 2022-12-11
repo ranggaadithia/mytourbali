@@ -11,6 +11,6 @@
 <body class="font-poppins">
   @yield('container')
 
-<script src="js/script.js"></script>
+  @vite('resources/js/index.min.js')
 </body>
 </html>
