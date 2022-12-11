@@ -115,16 +115,9 @@
     </div>
   </section>
 
-
-  <section class="car" id="car">
-    <div class="py-20 container mx auto px-4">
-      <h1 class="title">Available Cars</h1>
-    </div>
-  </section>
-
   {{-- gallery --}}
   <section class="gallery" id="gallery">
-    <div class="py-20 container mx auto px-4 bg-gray-200">
+    <div class="py-20 container mx auto px-4 bg-dark-200">
       <h1 class="title">Gallery</h1>
       <div class="flex flex-row gap-y-4 items-center justify-between flex-wrap">
         @for ($i = 0; $i < 10; $i++)
@@ -150,13 +143,62 @@
             <button class="absolute top-2 right-4 text-4xl text-white md:text-black" id="close">&times;</button>
           </div>
           <div class="w-full md:w-1/2 p-4 md:py-12 md:px-4">
-            <h2 class="text-xl font-subtitle font-semibold mb-1 md:text-2xl md:mb-3">Padang-padang Beach</h2>
+            <h2 class="text-xl font-subtitle font-semibold mb-1 md:text-2xl md:mb-3 text-gray-700">Padang-padang Beach</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquid error, quae unde reprehenderit quos harum quidem dolor voluptatibus assumenda totam libero.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  {{-- testimonial --}}
+  
+  <section class="testimonial" id="testimonial">
+    <div class="py-20 container mx auto px-4 bg-dark-200">
+      <h1 class="title">Testimonial</h1>
+      <div class="flex justify-center">
+        <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+          <div class="flex flex-row items-center">
+            <img src="img/testimoni/testi.jpeg" alt="" class="w-16 h-16 object-cover object-center rounded-full">
+            <div class="flex flex-col ml-3">
+              <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">Jhon Doe</h5>
+              <ul class="flex justify-center">
+                <li>
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500 mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                  </svg>
+                </li>
+                <li>
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500 mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                  </svg>
+                </li>
+                <li>
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500 mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                  </svg>
+                </li>
+                <li>
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500 mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+                  </svg>
+                </li>
+                <li>
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+                  </svg>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-gray-700 text-base mb-4 mt-3">
+            "Some quick example text to build on the card title and make up the bulk of the card's
+            content."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
