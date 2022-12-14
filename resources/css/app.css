@@ -30,3 +30,11 @@
 .title {
     @apply text-3xl font-subtitle font-semibold text-center mb-5;
 }
+
+.slick-slide {
+    transform: scale(0.8);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.slick-center {
+    transform: scale(1);
+}
