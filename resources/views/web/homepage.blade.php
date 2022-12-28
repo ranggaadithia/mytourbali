@@ -6,7 +6,7 @@
     <div class="bg-[url('../../public/img/cliff.jpg')] min-w-screen h-screen bg-cover bg-no-repeat bg-fixed bg-center relative flex items-center justify-center flex-col after:content-[''] after:block after:w-full after:h-screen after:absolute after:top-0 after:bg-gradient-to-b after:from-black/30 -z-10">
       <div class="container mx-auto z-10 text-center">
         <h1 class="text-5xl text-white leading-relaxed font-title mb-1">Enjoy your Holiday in Bali Island</h1>
-        <div class="line-pattern"></div>
+        <div class="line-pattern mx-auto"></div>
       </div>
     </div>
 
@@ -15,7 +15,7 @@
   <section class="about" id="about">
     <div class="container mx-auto px-4 lg:px-20 py-20">
       <h1  class="text-center font-title text-3xl mb-3 mb:text-6xl">My Tour Bali</h1>
-      <div class="line-pattern"></div>
+      <div class="line-pattern mx-auto"></div>
       <div class="flex justify-evenly lg:items-center">
         <div class="w-full md:w-1/2 md:pr-5 lg:pr-20">
           <h3 class="mt-5 text-2xl font-subtitle font-bold lg:text-3xl">Forget Busy Work,<br/> and Enjoy your Holiday</h3>
@@ -205,6 +205,9 @@
   </section>
 
 
+  {{-- footer --}}
+
+  @include('components.footer')
   
 
 @endsection

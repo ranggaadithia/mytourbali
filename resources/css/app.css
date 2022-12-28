@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 .line-pattern {
-    @apply w-[50px] bg-emerald-500 h-[5px] rounded-sm mx-auto mb-10;
+    @apply w-[50px] bg-emerald-500 h-[5px] rounded-sm mb-10;
 }
 
 .line-pattern::before {
