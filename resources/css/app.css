@@ -38,3 +38,15 @@
 .slick-center {
     transform: scale(1);
 }
+
+.bg-glass {
+    @apply backdrop-blur-md duration-300 transition-all ease-in-out bg-black/20 border-b-2 border-b-white/20;
+}
+
+.bg-glass #title {
+    @apply text-2xl duration-300 transition-all ease-in-out;
+}
+
+.bg-glass #container {
+    @apply py-2 duration-300 transition-all ease-in-out;
+}

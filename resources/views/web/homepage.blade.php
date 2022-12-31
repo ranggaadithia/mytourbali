@@ -1,6 +1,8 @@
 @extends('layouts.index')
 
 @section('container')
+
+  @include('components.navbar')
   
   {{-- jumbotron --}}
     <div class="bg-[url('../../public/img/cliff.jpg')] min-w-screen h-screen bg-cover bg-no-repeat bg-fixed bg-center relative flex items-center justify-center flex-col after:content-[''] after:block after:w-full after:h-screen after:absolute after:top-0 after:bg-gradient-to-b after:from-black/30 -z-10">

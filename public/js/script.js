@@ -44,3 +44,24 @@ $(document).ready(function(){
   
 });
 });
+
+
+window.addEventListener('scroll', function() {
+  var nav = document.querySelector('nav');
+  if (window.scrollY > 10) {
+    nav.classList.add('bg-glass');
+  } else {
+    nav.classList.remove('bg-glass');
+  }
+});
+
+
+const menuButton = document.querySelector("#menu-button")
+const navContent = document.querySelector("#nav-content")
+const nav = document.querySelector('nav');
+
+menuButton.addEventListener("click", function(){
+  navContent.classList.toggle("hidden")
+  nav.classList.add("bg-glass")
+  
+})
