@@ -63,16 +63,6 @@ menuButton.addEventListener("click", function(){
   
 })
 
-const swiper = document.querySelectorAll("#swiper")
 
-for(i = 0; i < swiper.length; i++)
-{
-  if(i % 2 == 0) {
-    swiper[i].classList.add('order-last')
-  } else {
-    swiper[i].classList.add('order-first')
-  }
-
-}
 
 

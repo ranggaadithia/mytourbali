@@ -6,7 +6,7 @@
 
   <div class="w-full h-screen relative flex items-center justify-center after:content-[''] after:block after:w-full after:h-screen after:absolute after:top-0 after:bg-gradient-to-b after:from-black/30">
     <div class="absolute pb-12 z-10">
-      <h1 class=" text-white font-title text-5xl">Kintamani Tour</h1>
+      <h1 class="text-white font-title text-5xl">Kintamani Tour</h1>
       <div class="line-pattern mx-auto mt-2"></div>
     </div>
     <img src="/img/kintamani.jpg" alt="" class="w-full h-screen object-cover">
@@ -95,5 +95,18 @@
       effect: "cards",
       grabCursor: true,
     });
+  </script>
+  <script>
+        const swiper = document.querySelectorAll("#swiper")
+
+        for(i = 0; i < swiper.length; i++)
+        {
+          if(i % 2 == 0) {
+            swiper[i].classList.add('order-last')
+          } else {
+            swiper[i].classList.add('order-first')
+          }
+
+        }
   </script>
 @endsection
