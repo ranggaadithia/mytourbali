@@ -25,9 +25,9 @@
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide rounded-md"><img src="/img/kintamani-cover.jpg" alt="" class="object-cover w-[300px] h-[350px]"></div>
-                <div class="swiper-slide rounded-md"><img src="/img/gwk.jpg" alt="" class="object-cover w-[300px] h-[350px]"></div>
-                <div class="swiper-slide  rounded-md"><img src="/img/pura.jpg" alt=""  class="object-cover w-[300px] h-[350px]"></div>
+                <div class="swiper-slide rounded-md"><img src="/img/kintamani-cover.jpg" alt="" class="object-cover w-[350px] h-[350px]"></div>
+                <div class="swiper-slide rounded-md"><img src="/img/gwk.jpg" alt="" class="object-cover w-[350px] h-[350px]"></div>
+                <div class="swiper-slide  rounded-md"><img src="/img/pura.jpg" alt=""  class="object-cover w-[350px] h-[350px]"></div>
               </div>
             </div>
           </div>
@@ -38,45 +38,44 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
               <!-- Slides -->
-              <div class="swiper-slide rounded-md"><img src="/img/kintamani-cover.jpg" alt="" class="object-cover w-[300px] h-[350px]"></div>
-              <div class="swiper-slide rounded-md "><img src="/img/gwk.jpg" alt="" class="object-cover w-[300px] h-[350px]"></div>
-              <div class="swiper-slide  rounded-md "><img src="/img/pura.jpg" alt=""  class="object-cover w-[300px] h-[350px]"></div>
+              <div class="swiper-slide rounded-md"><img src="/img/kintamani-cover.jpg" alt="" class="object-cover w-[350px] h-[350px]"></div>
+              <div class="swiper-slide rounded-md "><img src="/img/gwk.jpg" alt="" class="object-cover w-[350px] h-[350px]"></div>
+              <div class="swiper-slide  rounded-md "><img src="/img/pura.jpg" alt=""  class="object-cover w-[350px] h-[350px]"></div>
             </div>
           </div>
         </div>
       </div>
       @endfor
-
-      <div class="flex justify-center mt-20">
-        <div class="w-full md:w-2/3 rounded-lg overflow-hidden shadow-md">
-          <div class="w-full text-center p-4 bg-emerald-500">
-            <h2 class="text-white font-subtitle text-xl font-semibold"> Prepare your journey to Kintamani</h2>
-          </div>
-          <div class="p-8">
-            Prepare your trip to Nusa Penida Island with the price of our package that we have arranged in such a way that guests can enjoy the Nusa Penida Island tour safely and comfortably, the things that must be prepared are fit condition, bringing more clothes worn if wet when the tour can change clothes, bring sunblock cream because the weather in Nusa Penida is quite hot, bring a hat and sunglasses if necessary, bring a camera to capture beautiful photo moments there, wake up early because you cross by using a fast boat so you don’t miss the fast boat and always communicate with the guide accompanying tours before carrying out activities because of the location of cliffs that might be dangerous for you if you are not careful.
-            <h3 class="mt-4 mb-2 text-2xl font-subtitle font-semibold uppercase">Itinary</h3>
-            <ul class="list-disc pl-4">
-              <li>In the morning our representative will pick you up at your hotel and transfer to the harbour</li>
-              <li>Boat is leaving to Nusa Penida at 08.30am</li>
-              <li>The journey to Nusa Penida will take around 40 minutes</li>
-              <li>Arriving at Nusa Penida, our representative will waiting you with sign board of your name</li>
-              <li>Arriving at Nusa Penida, our representative will waiting you with sign board of your name</li>
-              <li>In the afternoon at 16.00, you will be dropped to Nusa Penida Harbour to proceed your journey back to Bali</li>
-            </ul>
-            <h3 class="mt-4 mb-2 text-2xl font-subtitle font-semibold uppercase">Inclusions</h3>
-            <ul class="list-disc pl-4">
-              <li>Car</li>
-              <li>Professional english speaking driver</li>
-              <li>Parking fees</li>
-              <li>Donation</li>
-              <li>Launch at Grand Puncak Sari Restaurant</li>
-            </ul>
-            <div class="w-full text-center mt-7">
-              <a href="" class="button">Start your journey now!</a>
-            </div>
-          </div>
-          <div class="line-pattern mx-auto"></div>
+    </div>
+    <div class="flex justify-center mt-20">
+      <div class="w-full md:w-2/3 rounded-lg overflow-hidden shadow-md">
+        <div class="w-full text-center p-4 bg-emerald-500">
+          <h2 class="text-white font-subtitle text-xl font-semibold"> Prepare your journey to Kintamani</h2>
         </div>
+        <div class="p-8">
+          Prepare your trip to Nusa Penida Island with the price of our package that we have arranged in such a way that guests can enjoy the Nusa Penida Island tour safely and comfortably, the things that must be prepared are fit condition, bringing more clothes worn if wet when the tour can change clothes, bring sunblock cream because the weather in Nusa Penida is quite hot, bring a hat and sunglasses if necessary, bring a camera to capture beautiful photo moments there, wake up early because you cross by using a fast boat so you don’t miss the fast boat and always communicate with the guide accompanying tours before carrying out activities because of the location of cliffs that might be dangerous for you if you are not careful.
+          <h3 class="mt-4 mb-2 text-2xl font-subtitle font-semibold uppercase">Itinary</h3>
+          <ul class="list-disc pl-4">
+            <li>In the morning our representative will pick you up at your hotel and transfer to the harbour</li>
+            <li>Boat is leaving to Nusa Penida at 08.30am</li>
+            <li>The journey to Nusa Penida will take around 40 minutes</li>
+            <li>Arriving at Nusa Penida, our representative will waiting you with sign board of your name</li>
+            <li>Arriving at Nusa Penida, our representative will waiting you with sign board of your name</li>
+            <li>In the afternoon at 16.00, you will be dropped to Nusa Penida Harbour to proceed your journey back to Bali</li>
+          </ul>
+          <h3 class="mt-4 mb-2 text-2xl font-subtitle font-semibold uppercase">Inclusions</h3>
+          <ul class="list-disc pl-4">
+            <li>Car</li>
+            <li>Professional english speaking driver</li>
+            <li>Parking fees</li>
+            <li>Donation</li>
+            <li>Launch at Grand Puncak Sari Restaurant</li>
+          </ul>
+          <div class="w-full text-center mt-7">
+            <a href="" class="button">Start your journey now!</a>
+          </div>
+        </div>
+        <div class="line-pattern mx-auto"></div>
       </div>
     </div>
     <div class="w-full mt-10 text-center p-10 border-t-2 border-t-emerald-500">
