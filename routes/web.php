@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('web.homepage');
 });
+Route::get('/tour/kintamani-tour', function () {
+    return view('web.tour.show');
+});
 Route::get('/test', function () {
     return view('web.test');
 });

@@ -86,7 +86,7 @@
       <div class="flex flex-row gap-y-4 items-center justify-between flex-wrap">
         @for ($i = 0; $i < 10; $i++)
         <a href="" class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4">
-          <div class="w-full md:h-64 h-56 rounded-xl shadow-lg relative overflow-hidden after:content-[''] after:block after:absolute after:inset-x-0 after:bottom-0 after:h-16 after:bg-gradient-to-t after:backdrop-blur-xl group">
+          <div class="w-full md:h-64 h-56 rounded-xl shadow-lg relative overflow-hidden after:content-[''] after:block after:absolute after:inset-x-0 after:bottom-0 after:h-16 after:bg-gradient-to-t after:backdrop-blur-xl after:bg-black/10 group">
             <img src="img/pura.jpg" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
             <h4 class="text-white absolute bottom-6 inset-x-1 z-20 text-center font-subtitle text-xl">Beratan Temple</h4>
           </div>
@@ -106,9 +106,9 @@
         @for ($i = 0; $i < 6; $i++)  
           <div class="md:basis-1/2 lg:basis-1/3 md:px-6 w-full">
             <div class="rounded-xl shadow-lg relative flex flex-col justify-between items-center h-[26rem] overflow-hidden after:content-[''] after:block after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/30 group cursor-pointer">
-              <img src="img/gwk.jpg" alt="" class="absolute w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
-              <h4 class="text-white mt-10 z-20 text-center font-subtitle text-xl group-hover:mt-12 transition-all duration-300 ease-in-out">Garuda Wisnu Kencana (GWK)</h4>
-              <a href="" class="button z-20 lg:opacity-0 mb-12 lg:group-hover:opacity-100 transition duration-300 ease-in-out">Read More</a>
+              <img src="img/kintamani-cover.jpg" alt="" class="absolute w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
+              <h4 class="text-white mt-10 z-20 text-center font-subtitle text-xl group-hover:mt-12 transition-all duration-300 ease-in-out">Kintamani Tour</h4>
+              <a href="tour/kintamani-tour" class="button z-20 lg:opacity-0 mb-12 lg:group-hover:opacity-100 transition duration-300 ease-in-out">Read More</a>
             </div>
           </div>
           @endfor
@@ -119,16 +119,18 @@
 
   {{-- gallery --}}
   <section class="gallery" id="gallery">
-    <div class="py-20 container mx auto px-4 bg-dark-200">
-      <h1 class="title">Gallery</h1>
-      <div class="flex flex-row gap-y-4 items-center justify-between flex-wrap">
-        @for ($i = 0; $i < 10; $i++)
-        <button class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4" id="showModal">
-          <div class="w-full md:h-48 h-40 rounded-xl shadow-lg relative overflow-hidden group bg-black">
-            <img src="img/cliff.jpg" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
-          </div>
-        </button>
-        @endfor
+    <div class="container mx-auto">
+      <div class="py-20 mx auto px-10 bg-dark-200">
+        <h1 class="title">Gallery</h1>
+        <div class="flex flex-row gap-y-4 items-center justify-between flex-wrap">
+          @for ($i = 0; $i < 10; $i++)
+          <button class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4" id="showModal">
+            <div class="w-full md:h-48 h-40 rounded-xl shadow-lg relative overflow-hidden group bg-black">
+              <img src="img/cliff.jpg" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
+            </div>
+          </button>
+          @endfor
+        </div>
       </div>
     </div>
   </section>
@@ -210,6 +212,12 @@
   {{-- footer --}}
 
   @include('components.footer')
+
+  <script>
+    close.addEventListener("click", function() {
+      modal.classList.toggle("hidden");
+    });
+  </script>
   
 
 @endsection

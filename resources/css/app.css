@@ -50,3 +50,8 @@
 .bg-glass #container {
     @apply py-2 duration-300 transition-all ease-in-out;
 }
+
+.swiper {
+    width: 300px;
+    height: 350px;
+}

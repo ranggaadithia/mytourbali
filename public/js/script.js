@@ -10,9 +10,6 @@ for (let i = 0; i < showModal.length; i++) {
   });
 }
 
-close.addEventListener("click", function() {
-  modal.classList.toggle("hidden");
-});
 
 $(document).ready(function(){
   $('.testi-card').slick({
@@ -65,3 +62,17 @@ menuButton.addEventListener("click", function(){
   nav.classList.add("bg-glass")
   
 })
+
+const swiper = document.querySelectorAll("#swiper")
+
+for(i = 0; i < swiper.length; i++)
+{
+  if(i % 2 == 0) {
+    swiper[i].classList.add('order-last')
+  } else {
+    swiper[i].classList.add('order-first')
+  }
+
+}
+
+
