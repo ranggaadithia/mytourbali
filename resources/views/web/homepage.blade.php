@@ -219,11 +219,13 @@
 
   @include('components.footer')
 
-  {{-- <script>
+  <script>
+    const close = document.querySelector('#close');
+
     close.addEventListener("click", function() {
       modal.classList.toggle("hidden");
     });
-  </script> --}}
+  </script>
   
 
 @endsection
