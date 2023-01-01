@@ -86,27 +86,5 @@
 
   @include('components.footer')
   
-
-  <script type="module">
-    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
-
-    const swiper = new Swiper('.swiper', {
-      // Optional parameters
-      effect: "cards",
-      grabCursor: true,
-    });
-  </script>
-  <script>
-        const swiper = document.querySelectorAll("#swiper")
-
-        for(i = 0; i < swiper.length; i++)
-        {
-          if(i % 2 == 0) {
-            swiper[i].classList.add('order-last')
-          } else {
-            swiper[i].classList.add('order-first')
-          }
-
-        }
-  </script>
+  
 @endsection

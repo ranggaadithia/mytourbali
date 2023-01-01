@@ -52,6 +52,9 @@
 }
 
 .swiper {
-    width: 350px;
-    height: 350px;
+    @apply w-80 h-80;
+}
+
+.swiper-slide-active #card {
+    @apply scale-100;
 }

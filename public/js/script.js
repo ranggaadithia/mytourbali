@@ -11,37 +11,6 @@ for (let i = 0; i < showModal.length; i++) {
 }
 
 
-$(document).ready(function(){
-  $('.testi-card').slick({
-  arrows:false,
-  infinite:true,
-  centerMode: true,
-  centerPadding: '40px',
-  slidesToShow: 3,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '10px',
-        slidesToShow: 3
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        arrows: false,
-        centerMode: true,
-        centerPadding: '40px',
-        slidesToShow: 1
-      }
-    }
-  ]
-  
-});
-});
-
 
 window.addEventListener('scroll', function() {
   var nav = document.querySelector('nav');
@@ -63,6 +32,52 @@ menuButton.addEventListener("click", function(){
   
 })
 
+const swiper = new Swiper('.swiper-container', {
+  centeredSlides: true,
+  loop: true,
+  grabCursor: true,
+
+  breakpoints: {
+  // when window width is >= 320px
+  320: {
+    slidesPerView: 1,
+    spaceBetween: 1
+  },
+  // when window width is >= 480px
+  480: {
+    slidesPerView: 3,
+    spaceBetween: 1
+  },
+  // when window width is >= 640px
+  640: {
+    slidesPerView: 3,
+    spaceBetween: 1
+  },
+  autoplay: {
+    delay: 100,
+ },
+ 
+}
+});
+
+
+const imageShow = new Swiper('.swiper', {
+  // Optional parameters
+  effect: "cards",
+  grabCursor: true,
+});
+
+const card = document.querySelectorAll("#swiper")
+
+for(i = 0; i < card.length; i++)
+{
+  if(i % 2 == 0) {
+    card[i].classList.add('order-last')
+  } else {
+    card[i].classList.add('order-first')
+  }
+
+}
 
 
 
