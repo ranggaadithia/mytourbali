@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Destination;
 use Illuminate\Support\Facades\Route;
+use App\Models\Package;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +22,5 @@ Route::get('/tour/kintamani-tour', function () {
     return view('web.tour.show');
 });
 Route::get('/test', function () {
-    return view('web.test');
+    $destinations = Destination::where('package_id', 4)->get();
 });

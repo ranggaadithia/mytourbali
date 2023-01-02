@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Package;
+use Carbon\Factory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +16,5 @@ class PackageSeeder extends Seeder
      */
     public function run()
     {
-        //
     }
 }

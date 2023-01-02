@@ -17,7 +17,9 @@ class DestinationFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->city(),
+            'description' => fake()->paragraphs(2, true),
+            'package_id' => mt_rand(1, 5)
         ];
     }
 }

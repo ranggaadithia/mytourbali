@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Package;
 use App\Http\Requests\StorePackageRequest;
 use App\Http\Requests\UpdatePackageRequest;
+use App\Models\Destination;
 
 class PackageController extends Controller
 {
@@ -15,7 +16,6 @@ class PackageController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**

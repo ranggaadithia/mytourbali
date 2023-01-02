@@ -1,7 +1,7 @@
 <nav class="bg-transparent fixed w-full z-50 top-0">
   <div class="container mx-auto px-5 md:px-20 flex flex-wrap items-center justify-between mt-0 py-6 relative" id="container">
     <div class="flex items-center">
-      <a href="#" class="text-white text-3xl tracking-tight font-title" id="title">My Tour Bali</a>
+      <a href="/" class="text-white text-3xl tracking-tight font-title" id="title">My Tour Bali</a>
     </div>
     <div class="block lg:hidden pr-4">
       <button class="flex items-center px-3 py-2 border rounded text-white border-white hover:text-emerald-300 hover:border-emtext-emerald-300" id="menu-button">
