@@ -11,8 +11,10 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-            },
+                title: ['Kaushan Script', 'cursive'],
+                subtitle: ['K2D', 'sans-serif'],
+                poppins: ['Poppins', 'sans-serif'],
+              },
         },
     },
 

@@ -17,10 +17,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PackageController::class, 'index']);
+Route::get('/tour/{package:slug}', [PackageController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+})->name('package');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
