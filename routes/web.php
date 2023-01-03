@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\PackageDashboard;
 use App\Http\Controllers\ProfileController;
 use App\Models\Package;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::resource('/package', PackageDashboard::class);
 })->name('package');
 
 Route::middleware('auth')->group(function () {

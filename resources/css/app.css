@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* * {
+    @apply border-2 border-red-500;
+} */
+
 .line-pattern {
     @apply w-[50px] bg-emerald-500 h-[5px] rounded-sm mb-10;
 }
