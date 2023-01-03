@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\PackageController;
-use App\Models\Destination;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 use App\Models\Package;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +18,14 @@ use App\Models\Package;
 
 Route::get('/', [PackageController::class, 'index']);
 
-Route::get('/tour/{package:slug}', [PackageController::class, 'show']);
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/test/{id}', function ($id) {
-    $destinations = Destination::where('package_id', $id)->get();
-    return $destinations;
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+require __DIR__ . '/auth.php';

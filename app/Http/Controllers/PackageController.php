@@ -57,11 +57,6 @@ class PackageController extends Controller
         return view('web.tour.show', compact('package', 'destinations'));
     }
 
-    public function hello()
-    {
-        return "hello";
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
