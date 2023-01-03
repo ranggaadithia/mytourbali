@@ -102,16 +102,16 @@
     <div class="py-20 w-full bg-gray-200">
       <div class="container lg:px-20 md:px-4 px-10 mx-auto">
         <h1 class="title">Tour Packages</h1>
-        <div class="flex flex-col md:flex-row gap-y-6 items-center justify-center md:justify-between flex-wrap">
-        @for ($i = 0; $i < 6; $i++)  
+        <div class="flex flex-col md:flex-row gap-y-6 items-center justify-center md:justify-start flex-wrap">
+        @foreach ($packages as $package)
           <div class="md:basis-1/2 lg:basis-1/3 md:px-6 w-full">
             <div class="rounded-xl shadow-lg relative flex flex-col justify-between items-center h-[26rem] overflow-hidden after:content-[''] after:block after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/30 group cursor-pointer">
-              <img src="img/kintamani-cover.jpg" alt="" class="absolute w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
-              <h4 class="text-white mt-10 z-20 text-center font-subtitle text-xl group-hover:mt-12 transition-all duration-300 ease-in-out">Kintamani Tour</h4>
-              <a href="tour/kintamani-tour" class="button z-20 lg:opacity-0 mb-12 lg:group-hover:opacity-100 transition duration-300 ease-in-out">Read More</a>
+              <img src="{{ $package->image_cover }}" alt="" class="absolute w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
+              <h4 class="text-white mt-10 z-20 text-center font-subtitle text-xl group-hover:mt-12 transition-all duration-300 ease-in-out">{{ $package->name }}</h4>
+              <a href="/tour/{{ $package->slug }}" class="button z-20 lg:opacity-0 mb-12 lg:group-hover:opacity-100 transition duration-300 ease-in-out">Read More</a>
             </div>
           </div>
-          @endfor
+        @endforeach
         </div>
       </div>
     </div>

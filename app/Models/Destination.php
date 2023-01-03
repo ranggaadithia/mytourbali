@@ -13,6 +13,11 @@ class Destination extends Model
 
     public function package()
     {
-        return $this->belongsTo(Package::class, 'package_id');
+        return $this->belongsTo(Package::class);
+    }
+
+    public function photo()
+    {
+        return $this->hasMany(Photos::class);
     }
 }
