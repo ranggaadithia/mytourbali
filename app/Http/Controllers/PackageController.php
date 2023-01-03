@@ -6,6 +6,7 @@ use App\Models\Package;
 use App\Http\Requests\StorePackageRequest;
 use App\Http\Requests\UpdatePackageRequest;
 use App\Models\Destination;
+use App\Models\Photos;
 
 class PackageController extends Controller
 {
@@ -16,6 +17,11 @@ class PackageController extends Controller
      */
     public function index()
     {
+
+        return view(
+            'web.homepage',
+            ['packages' => Package::all()]
+        );
     }
 
     /**
@@ -25,7 +31,6 @@ class PackageController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -47,7 +52,14 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
-        //
+        $destinations = $package->destinations;
+
+        return view('web.tour.show', compact('package', 'destinations'));
+    }
+
+    public function hello()
+    {
+        return "hello";
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PackageController;
 use App\Models\Destination;
 use Illuminate\Support\Facades\Route;
 use App\Models\Package;
@@ -15,12 +16,11 @@ use App\Models\Package;
 |
 */
 
-Route::get('/', function () {
-    return view('web.homepage');
-});
-Route::get('/tour/kintamani-tour', function () {
-    return view('web.tour.show');
-});
-Route::get('/test', function () {
-    $destinations = Destination::where('package_id', 4)->get();
+Route::get('/', [PackageController::class, 'index']);
+
+Route::get('/tour/{package:slug}', [PackageController::class, 'show']);
+
+Route::get('/test/{id}', function ($id) {
+    $destinations = Destination::where('package_id', $id)->get();
+    return $destinations;
 });
