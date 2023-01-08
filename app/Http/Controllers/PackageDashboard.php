@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Package;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PackageDashboard extends Controller
 {
@@ -25,7 +28,7 @@ class PackageDashboard extends Controller
      */
     public function create()
     {
-        //
+        return view('package.create');
     }
 
     /**
@@ -36,7 +39,30 @@ class PackageDashboard extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|unique:packages|max:255',
+            'slug' => 'required|unique:packages',
+            'image_cover' => 'image|file|max:25000',
+            'image' => 'image|file|max:25000',
+            'description' => 'required',
+        ]);
+        $validated = $validator->validated();
+
+        $validated['slug'] = Str::slug($request->name);
+
+        if ($request->file('image_cover')) {
+            $validated['image_cover'] = $request->file('image_cover')->store('package-image');
+        }
+
+        if ($request->file('image')) {
+            $validated['image'] = $request->file('image')->store('package-image');
+        }
+
+        Package::create($validated);
+
+
+        return redirect("/package");
     }
 
     /**

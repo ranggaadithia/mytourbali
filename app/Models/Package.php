@@ -9,6 +9,13 @@ class Package extends Model
 {
     use HasFactory;
 
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'packages';
+
     protected $guarded = ['id'];
 
     public function destinations()
