@@ -14,6 +14,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
         <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -33,5 +35,35 @@
                 {{ $slot }}
             </main>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+        <script>
+            function imagePreview() {
+                const image = document.querySelector("#image");
+                const imgPreview = document.querySelector(".img-preview");
+                
+
+                const oFReader = new FileReader();
+                oFReader.readAsDataURL(image.files[0]);
+                
+
+                oFReader.onload = function (oFREvent) {
+                    imgPreview.src = oFREvent.target.result;
+                };
+                
+            }
+
+            function imagePreviewCover()
+            {
+                const imageCover = document.querySelector("#image_cover");
+                const imgPreviewCover = document.querySelector(".img-preview-cover");
+
+                const oFReader = new FileReader();
+                oFReader.readAsDataURL(imageCover.files[0]);
+                
+                oFReader.onload = function (oFREvent) {
+                    imgPreviewCover.src = oFREvent.target.result;
+                };
+            }
+        </script>
     </body>
 </html>

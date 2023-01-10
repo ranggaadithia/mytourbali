@@ -39,7 +39,6 @@ class PackageDashboard extends Controller
      */
     public function store(Request $request)
     {
-
         $validator = Validator::make($request->all(), [
             'name' => 'required|unique:packages|max:255',
             'slug' => 'required|unique:packages',
@@ -59,10 +58,10 @@ class PackageDashboard extends Controller
             $validated['image'] = $request->file('image')->store('package-image');
         }
 
-        Package::create($validated);
+        $package = Package::create($validated);
 
 
-        return redirect("/package");
+        return redirect()->route('destination.index', $package->id)->with('status', "Package Successfully Created");
     }
 
     /**
@@ -84,7 +83,7 @@ class PackageDashboard extends Controller
      */
     public function edit(Package $package)
     {
-        //
+        return view('package.edit', compact('package'));
     }
 
     /**
@@ -96,7 +95,37 @@ class PackageDashboard extends Controller
      */
     public function update(Request $request, Package $package)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'slug' => 'required',
+            'image_cover' => 'image|file|max:25000',
+            'image' => 'image|file|max:25000',
+            'description' => 'required',
+        ]);
+
+        $validated = $validator->validated();
+        $validated['slug'] = Str::slug($request->name);
+
+        if ($request->file('image')) {
+
+            if ($package->image) {
+                Storage::delete($package->image);
+            }
+
+            $validated['image'] = $request->file('image')->store('package-image');
+        }
+
+        if ($request->file('image_cover')) {
+
+            if ($package->image) {
+                Storage::delete($package->image_cover);
+            }
+
+            $validated['image_cover'] = $request->file('image_cover')->store('package-image');
+        }
+
+        Package::where('id', $package->id)->update($validated);
+        return redirect()->route('package.index')->with('status', 'package succesfully updated');
     }
 
     /**
@@ -107,6 +136,12 @@ class PackageDashboard extends Controller
      */
     public function destroy(Package $package)
     {
-        //
+        if ($package->image || $package->image_cover) {
+            Storage::delete([$package->image, $package->image_cover]);
+        }
+
+        Package::destroy($package->id);
+
+        return redirect()->route('package.index')->with('status', "package successfully deleted");
     }
 }

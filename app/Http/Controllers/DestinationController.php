@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Destination;
-use App\Http\Requests\StoreDestinationRequest;
-use App\Http\Requests\UpdateDestinationRequest;
+use App\Models\Package;
+use App\Models\Photos;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class DestinationController extends Controller
 {
@@ -13,9 +16,9 @@ class DestinationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Package $package)
     {
-        //
+        return view('destination.index', compact('package'));
     }
 
     /**
@@ -23,9 +26,9 @@ class DestinationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Package $package)
     {
-        //
+        return view('destination.create', compact('package'));
     }
 
     /**
@@ -34,9 +37,30 @@ class DestinationController extends Controller
      * @param  \App\Http\Requests\StoreDestinationRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDestinationRequest $request)
+    public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|unique:destinations|max:255',
+            'description' => 'required',
+        ]);
+
+        $validated = $validator->validated();
+        $validated['package_id'] = $request->packageID;
+
+        $destination = Destination::create($validated);
+
+        if ($request->file('photos')) {
+            foreach ($request->file('photos') as $photoDestination) {
+                $photo = new Photos;
+                $path = $photoDestination->store('photos');
+                $photo->name = $destination->name;
+                $photo->image = $path;
+                $photo->destination_id = $destination->id;
+                $photo->save();
+            }
+        }
+
+        return redirect()->route('destination.index', $request->packageID)->with('status', 'Destination successfully Created');
     }
 
     /**
@@ -47,7 +71,6 @@ class DestinationController extends Controller
      */
     public function show(Destination $destination)
     {
-        //
     }
 
     /**
@@ -58,7 +81,7 @@ class DestinationController extends Controller
      */
     public function edit(Destination $destination)
     {
-        //
+        return view('destination.edit', compact('destination'));
     }
 
     /**
@@ -68,9 +91,29 @@ class DestinationController extends Controller
      * @param  \App\Models\Destination  $destination
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDestinationRequest $request, Destination $destination)
+    public function update(Request $request, Destination $destination)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'description' => 'required',
+        ]);
+
+        $validated = $validator->validated();
+
+        if ($request->file('photos')) {
+            foreach ($request->file('photos') as $photoDestination) {
+                $photo = new Photos;
+                $path = $photoDestination->store('photos');
+                $photo->name = $destination->name;
+                $photo->image = $path;
+                $photo->destination_id = $destination->id;
+                $photo->save();
+            }
+        }
+
+        Destination::where('id', $destination->id)->update($validated);
+
+        return redirect()->route('destination.index', $request->packageID)->with('status', "Destination successfully Updated");
     }
 
     /**
@@ -81,6 +124,8 @@ class DestinationController extends Controller
      */
     public function destroy(Destination $destination)
     {
-        //
+        Destination::destroy($destination->id);
+        Photos::where("destination_id", $destination->id)->delete();
+        return redirect()->back();
     }
 }
