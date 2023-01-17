@@ -54,6 +54,7 @@ class DestinationController extends Controller
                 $photo = new Photos;
                 $path = $photoDestination->store('photos');
                 $photo->name = $destination->name;
+                $photo->description = $destination->description;
                 $photo->image = $path;
                 $photo->destination_id = $destination->id;
                 $photo->save();
@@ -105,6 +106,7 @@ class DestinationController extends Controller
                 $photo = new Photos;
                 $path = $photoDestination->store('photos');
                 $photo->name = $destination->name;
+                $photo->description = $destination->description;
                 $photo->image = $path;
                 $photo->destination_id = $destination->id;
                 $photo->save();

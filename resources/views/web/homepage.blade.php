@@ -123,13 +123,30 @@
       <div class="py-20 mx auto px-10 bg-dark-200">
         <h1 class="title">Gallery</h1>
         <div class="flex flex-row gap-y-4 items-center justify-between flex-wrap">
-          @for ($i = 0; $i < 10; $i++)
-          <button class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4" id="showModal">
+          @foreach ($photos->shuffle()->take(10) as $photo)    
+          <button class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4" id="showModal" onclick="return {{ $photo->id }}">
             <div class="w-full md:h-48 h-40 rounded-xl shadow-lg relative overflow-hidden group bg-black">
-              <img src="img/cliff.jpg" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
+              <img src="{{ asset('storage/'.$photo->image) }}" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
             </div>
           </button>
-          @endfor
+          <div class="relative z-30 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="modal">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+            <div class="fixed inset-0 z-30 overflow-y-auto">
+              <div class="flex min-h-full items-center justify-center p-0 text-center sm:items-center sm:p-0">
+                <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 w-full sm:max-w-lg flex flex-col md:flex-row">
+                  <div class="w-full md:w-1/2">
+                    <img src="{{ asset('storage/'.$photo->image) }}" alt="" class="relative w-full h-full object-cover">
+                    <button class="absolute top-2 right-4 text-4xl text-white md:text-black" id="close">&times;</button>
+                  </div>
+                  <div class="w-full md:w-1/2 p-4 md:py-12 md:px-4">
+                    <h2 class="text-xl font-subtitle font-semibold mb-1 md:text-2xl md:mb-3 text-gray-700">{{ $photo->name }}</h2>
+                    <p>{{ $photo->description }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
         </div>
       </div>
     </div>
@@ -137,23 +154,8 @@
 
   {{-- modal gallery section --}}
 
-  <div class="relative z-30 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="modal">
-    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
-    <div class="fixed inset-0 z-30 overflow-y-auto">
-      <div class="flex min-h-full items-center justify-center p-0 text-center sm:items-center sm:p-0">
-        <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 w-full sm:max-w-lg flex flex-col md:flex-row">
-          <div class="w-full md:w-1/2">
-            <img src="img/cliff.jpg" alt="" class="relative w-full h-full object-cover">
-            <button class="absolute top-2 right-4 text-4xl text-white md:text-black" id="close">&times;</button>
-          </div>
-          <div class="w-full md:w-1/2 p-4 md:py-12 md:px-4">
-            <h2 class="text-xl font-subtitle font-semibold mb-1 md:text-2xl md:mb-3 text-gray-700">Padang-padang Beach</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aliquid error, quae unde reprehenderit quos harum quidem dolor voluptatibus assumenda totam libero.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
+
 
   {{-- testimonial --}}
   
@@ -218,14 +220,6 @@
   {{-- footer --}}
 
   @include('components.footer')
-
-  <script>
-    const close = document.querySelector('#close');
-
-    close.addEventListener("click", function() {
-      modal.classList.toggle("hidden");
-    });
-  </script>
   
 
 @endsection

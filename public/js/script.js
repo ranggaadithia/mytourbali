@@ -1,12 +1,18 @@
+const close = document.querySelectorAll('#close');
 const showModal = document.querySelectorAll('#showModal');
-const modal = document.querySelector('#modal');
+const modal = document.querySelectorAll('#modal');
+
+    
 
 
 
 
 for (let i = 0; i < showModal.length; i++) {
   showModal[i].addEventListener("click", function() {
-    modal.classList.toggle("hidden");
+    modal[i].classList.remove("hidden");
+  });
+  close[i].addEventListener("click", function() {
+    modal[i].classList.add("hidden");
   });
 }
 
@@ -78,6 +84,27 @@ for(i = 0; i < card.length; i++)
   }
 
 }
+
+
+const desciptionList = document.querySelectorAll("#description ul");
+const desciptionTitle = document.querySelectorAll("#description h1");
+
+for (let i = 0; i < desciptionList.length; i++) {
+  desciptionList[i].classList.add('list-disc', 'list-inside')
+  console.log(desciptionList[i]);
+}
+for (let j = 0; j < desciptionList.length; j++) {
+  desciptionTitle[j].classList.add('font-subtitle', 'text-2xl');
+}
+
+const modalShow = document.querySelector('#showModal');
+
+modalShow.addEventListener('click', function() {
+  console.log(modalShow);
+})
+
+
+
 
 
 

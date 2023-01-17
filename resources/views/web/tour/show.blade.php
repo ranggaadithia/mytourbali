@@ -10,14 +10,14 @@
       <h1 class="text-white font-title text-5xl">{{ $package->name }}</h1>
       <div class="line-pattern mx-auto mt-2"></div>
     </div>
-    <img src="{{ $package->image }}" alt="" class="w-full h-screen object-cover">
+    <img src="{{ asset('storage/'.$package->image) }}" alt="" class="w-full h-screen object-cover">
   </div>
 
 
   <section class="tour" id="tour">
     <div class="container mx-auto mt-20 px-4 lg:px-20">
       <h1 class="text-center text-3xl font-title">Tour Destination</h1>
-      @foreach ($destinations as $destination)
+      @foreach ($package->destinations as $destination)
       <div class="flex flex-col md:flex-row justify-evenly lg:items-center">
         <div class="w-full md:w-1/2 md:pr-5 lg:pr-20">
           <h3 class="mt-5 text-2xl font-subtitle font-bold lg:text-2xl">{{ $destination->name }}</h3>
@@ -27,7 +27,7 @@
               <div class="swiper-wrapper">
                 <!-- Slides -->
                 @foreach ($destination->photo as $photo)
-                <div class="swiper-slide rounded-md"><img src="{{ $photo->image }}" alt="" class="object-cover w-[350px] h-[350px]"></div>
+                <div class="swiper-slide rounded-md"><img src="{{ asset('storage/'.$photo->image) }}" alt="" class="object-cover w-[350px] h-[350px]"></div>
                 @endforeach
               </div>
             </div>
@@ -40,7 +40,7 @@
             <div class="swiper-wrapper">
               <!-- Slides -->
               @foreach ($destination->photo as $photo)
-              <div class="swiper-slide rounded-md"><img src="{{ $photo->image }}" alt="" class="object-cover w-[350px] h-[350px]"></div>
+              <div class="swiper-slide rounded-md"><img src="{{ asset('storage/'.$photo->image) }}" alt="" class="object-cover w-[350px] h-[350px]"></div>
               @endforeach
             </div>
           </div>
@@ -53,8 +53,8 @@
         <div class="w-full text-center p-4 bg-emerald-500">
           <h2 class="text-white font-subtitle text-xl font-semibold"> Prepare your journey to {{ Str::of($package->name)->trim("Tour") }}</h2>
         </div>
-        <div class="p-8">
-          {{ $package->description }}
+        <div class="p-8" id="description">
+          {!! $package->description !!}
           <div class="w-full text-center mt-7">
             <a href="" class="button">Start your journey now!</a>
           </div>
@@ -69,6 +69,5 @@
   </section>
 
   @include('components.footer')
-  
   
 @endsection

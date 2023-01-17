@@ -20,7 +20,10 @@ class PackageController extends Controller
 
         return view(
             'web.homepage',
-            ['packages' => Package::all()]
+            [
+                'packages' => Package::all(),
+                'photos' => Photos::all()
+            ]
         );
     }
 
@@ -52,9 +55,7 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
-        $destinations = $package->destinations;
-
-        return view('web.tour.show', compact('package', 'destinations'));
+        return view('web.tour.show', compact('package'));
     }
 
     /**
