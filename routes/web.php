@@ -25,6 +25,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PackageController::class, 'index']);
 Route::get('/tour/{package:slug}', [PackageController::class, 'show']);
+Route::get('/airport', function () {
+    return view('web.airport', [
+        'title' => 'Airport'
+    ]);
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

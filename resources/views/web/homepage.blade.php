@@ -41,7 +41,7 @@
       <div class="container mx-auto">
         <h1 class="title">Services</h1>
         <div class="flex flex-col gap-6 md:flex-row justify-center">
-          <a href="">
+          <a href="/airport">
             <div class="w-full flex flex-col items-center hover:scale-105 transition duration-200 hover:ease-in-out">
               <div class="bg-slate-50 p-7 rounded-lg shadow-xl flex flex-col items-center">
                 <div class="w-28 h-28 bg-emerald-400 rounded-full text-white flex items-center justify-center">

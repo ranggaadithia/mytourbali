@@ -4,9 +4,6 @@ const modal = document.querySelectorAll('#modal');
 
     
 
-
-
-
 for (let i = 0; i < showModal.length; i++) {
   showModal[i].addEventListener("click", function() {
     modal[i].classList.remove("hidden");
@@ -96,13 +93,6 @@ for (let i = 0; i < desciptionList.length; i++) {
 for (let j = 0; j < desciptionList.length; j++) {
   desciptionTitle[j].classList.add('font-subtitle', 'text-2xl');
 }
-
-const modalShow = document.querySelector('#showModal');
-
-modalShow.addEventListener('click', function() {
-  console.log(modalShow);
-})
-
 
 
 
