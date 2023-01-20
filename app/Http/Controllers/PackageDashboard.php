@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Package;
+use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
@@ -28,7 +29,8 @@ class PackageDashboard extends Controller
      */
     public function create()
     {
-        return view('package.create');
+        $categories = Category::all();
+        return view('package.create', compact('categories'));
     }
 
     /**
@@ -45,6 +47,7 @@ class PackageDashboard extends Controller
             'image_cover' => 'image|file|max:25000',
             'image' => 'image|file|max:25000',
             'description' => 'required',
+            'category_id' => 'required'
         ]);
         $validated = $validator->validated();
 
@@ -83,7 +86,8 @@ class PackageDashboard extends Controller
      */
     public function edit(Package $package)
     {
-        return view('package.edit', compact('package'));
+        $categories = Category::all();
+        return view('package.edit', compact('package', 'categories'));
     }
 
     /**
@@ -101,6 +105,7 @@ class PackageDashboard extends Controller
             'image_cover' => 'image|file|max:25000',
             'image' => 'image|file|max:25000',
             'description' => 'required',
+            'category_id' => 'required'
         ]);
 
         $validated = $validator->validated();
@@ -108,7 +113,7 @@ class PackageDashboard extends Controller
 
         if ($request->file('image')) {
 
-            if ($package->image) {
+            if (isset($package->image)) {
                 Storage::delete($package->image);
             }
 
@@ -117,7 +122,7 @@ class PackageDashboard extends Controller
 
         if ($request->file('image_cover')) {
 
-            if ($package->image) {
+            if (isset($package->image)) {
                 Storage::delete($package->image_cover);
             }
 

@@ -22,4 +22,9 @@ class Package extends Model
     {
         return $this->hasMany(Destination::class);
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

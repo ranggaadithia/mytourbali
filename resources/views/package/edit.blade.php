@@ -10,6 +10,20 @@
           <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
         <div class="max-w-36 mt-3">
+          <x-input-label for="category_id" :value="__('Category')" />
+          <div class="flex">
+            @foreach ($categories as $category)
+            <div class="form-check form-check-inline mr-3">
+              <input class="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="category_id" id="category_id_{{ $category->id }}" value="{{ $category->id }}" @if ($package->category->id == $category->id)
+              checked="checked" 
+              @endif>
+              <label class="form-check-label inline-block text-white" for="category_id1">{{ $category->name }}</label>
+            </div>
+            @endforeach
+          </div>
+          <x-input-error :messages="$errors->get('category_id')" class="mt-2" />
+        </div>
+        <div class="max-w-36 mt-3">
           @if ($package->image)
               <img src="{{ asset('storage/'. $package->image_cover) }}" class="w-1/3 image-preview">
           @else

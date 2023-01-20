@@ -1,6 +1,4 @@
 <x-app-layout>
-
-  
 <h1 class="text-white text-3xl font-medium text-center my-5">Add Package</h1>
   <div class="container mx-auto w-2/3 bg-slate-700 p-5 rounded-md">
     <form action="/package" method="post" enctype="multipart/form-data">
@@ -11,6 +9,18 @@
         <x-input-error :messages="$errors->get('name')" class="mt-2" />
       </div>
       <div class="max-w-36 mt-3">
+        <x-input-label for="category_id" :value="__('Category')" />
+        <div class="flex">
+          @foreach ($categories as $category)
+          <div class="form-check form-check-inline mr-3">
+            <input class="form-check-input form-check-input appearance-none rounded-full h-4 w-4 border border-gray-300 bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="radio" name="category_id" id="category_id_{{ $category->id }}" value="{{ $category->id }}">
+            <label class="form-check-label inline-block text-white" for="category_id1">{{ $category->name }}</label>
+          </div>
+          @endforeach
+        </div>
+        <x-input-error :messages="$errors->get('category_id')" class="mt-2" />
+      </div>
+      <div class="max-w-36 mt-3">
         <div class="w-1/5 ">
           <img class="img-preview-cover object-cover">
         </div>
@@ -18,6 +28,7 @@
         <input type="file" name="image_cover" id="image_cover" onchange="imagePreviewCover();">
         <x-input-error :messages="$errors->get('image_cover')" class="mt-2" />
       </div>
+      
       <div class="max-w-36 mt-3">
         <div class="w-1/3">
           <img class="img-preview object-cover">

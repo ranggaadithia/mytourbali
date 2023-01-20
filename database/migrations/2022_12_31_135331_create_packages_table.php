@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id');
             $table->string('name');
             $table->string('slug');
             $table->string('image_cover')->nullable();
