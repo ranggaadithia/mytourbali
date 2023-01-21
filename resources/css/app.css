@@ -55,10 +55,17 @@
     @apply py-2 duration-300 transition-all ease-in-out;
 }
 
-.swiper {
+/* .swiper {
     @apply w-80 h-80;
-}
+} */
 
 .swiper-slide-active #card {
     @apply scale-100;
+}
+
+.mySwiper .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
 }

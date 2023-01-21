@@ -3,12 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Package;
-use App\Http\Requests\StorePackageRequest;
-use App\Http\Requests\UpdatePackageRequest;
-use App\Models\Destination;
-use App\Models\Photos;
+use Illuminate\Http\Request;
 
-class PackageController extends Controller
+class ActivityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,15 +14,8 @@ class PackageController extends Controller
      */
     public function index()
     {
-
-        return view(
-            'web.homepage',
-            [
-                'photos' => Photos::all(),
-                'half_day' => Package::where('category_id', 3)->get(),
-                'full_day' => Package::where('category_id', 1)->get()
-            ]
-        );
+        $activities = Package::where('category_id', 2)->get();
+        return view('web.activity.index', compact('activities'));
     }
 
     /**
@@ -35,15 +25,16 @@ class PackageController extends Controller
      */
     public function create()
     {
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePackageRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePackageRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -56,7 +47,8 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
-        return view('web.tour.show', compact('package'));
+        $destination = $package->destinations[0];
+        return view('web.activity.show', compact('destination', 'package'));
     }
 
     /**
@@ -73,11 +65,11 @@ class PackageController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePackageRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\Package  $package
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePackageRequest $request, Package $package)
+    public function update(Request $request, Package $package)
     {
         //
     }

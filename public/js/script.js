@@ -64,7 +64,7 @@ const swiper = new Swiper('.swiper-container', {
 });
 
 
-const imageShow = new Swiper('.swiper', {
+const imageShow = new Swiper('.swiperDes', {
   // Optional parameters
   effect: "cards",
   grabCursor: true,
@@ -93,8 +93,4 @@ for (let i = 0; i < desciptionList.length; i++) {
 for (let j = 0; j < desciptionList.length; j++) {
   desciptionTitle[j].classList.add('font-subtitle', 'text-2xl');
 }
-
-
-
-
 

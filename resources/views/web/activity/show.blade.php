@@ -3,11 +3,12 @@
 @section('container')
 
   @include('components.navbar')
+  
 
   <div class="w-full h-screen relative flex items-center justify-center after:content-[''] after:block after:w-full after:h-screen after:absolute after:top-0 after:bg-gradient-to-b after:from-black/30">
     <div class="absolute pb-12 z-10">
-      <h1 class="text-white font-title text-5xl">{{ $package->name }}</h1>
-      <div class="line-pattern mx-auto mt-2"></div>
+      <h1 class="text-white text-center font-title text-5xl">{{ $package->name }}</h1>
+      <div class="line-pattern mx-auto mt-4"></div>
     </div>
     <img src="{{ asset('storage/'.$package->image) }}" alt="" class="w-full h-screen object-cover">
   </div>
@@ -15,42 +16,29 @@
 
   <section class="tour" id="tour">
     <div class="container mx-auto mt-20 px-4 lg:px-20">
-      <h1 class="text-center text-3xl font-title">Tour Destination</h1>
-      @foreach ($package->destinations as $destination)
+      <h1 class="text-center text-3xl font-title">{{ $destination->name }}</h1>
       <div class="flex flex-col md:flex-row justify-evenly lg:items-center">
-        <div class="w-full md:w-1/2 md:pr-5 lg:pr-20">
-          <h3 class="mt-5 text-2xl font-subtitle font-bold lg:text-2xl">{{ $destination->name }}</h3>
-          <div class="w-full md:hidden md:w-1/2 md:p-3 lg:p-6 my-3 overflow-hidden">
-            <div class="swiper swiperDes w-72 h-72">
-              <!-- Additional required wrapper -->
+        <div class="w-full">
+          <div class="w-full md:p-3 lg:p-6 my-6">
+            <div class="swiper mySwiper w-full">
               <div class="swiper-wrapper">
-                <!-- Slides -->
                 @foreach ($destination->photo as $photo)
-                <div class="swiper-slide rounded-md"><img src="{{ asset('storage/'.$photo->image) }}" alt="" class="object-cover w-[350px] h-[350px]"></div>
+                <div class="swiper-slide w-[300px] h-[300px]">
+                  <img src="{{ asset('storage/'.$photo->image) }}" class="block object-cover w-80 h-80 object-center" />
+                </div>
                 @endforeach
               </div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
           <p class="mt-3 mb-6 mb:mb-5 font-poppins text-gray-600 lg:text-base leading-relaxed">{{ $destination->description }}</p>
         </div>
-        <div class="hidden md:w-1/2 md:flex md:items-center md:p-3 lg:p-6 my-5" id="swiper">
-          <div class="swiper swiperDes w-80 h-80">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              @foreach ($destination->photo as $photo)
-              <div class="swiper-slide rounded-md"><img src="{{ asset('storage/'.$photo->image) }}" alt="" class="object-cover w-[350px] h-[350px]"></div>
-              @endforeach
-            </div>
-          </div>
-        </div>
       </div>
-      @endforeach
     </div>
     <div class="flex justify-center mt-20">
       <div class="w-full md:w-2/3 rounded-lg overflow-hidden shadow-md">
         <div class="w-full text-center p-4 bg-emerald-500">
-          <h2 class="text-white font-subtitle text-xl font-semibold"> Prepare your journey to {{ Str::of($package->name)->trim("Tour") }}</h2>
+          <h2 class="text-white font-subtitle text-xl font-semibold"> Prepare your journey to {{ Str::of($destination->name) }}</h2>
         </div>
         <div class="p-8" id="description">
           {!! $package->description !!}
@@ -69,4 +57,22 @@
 
   @include('components.footer')
   
+  <script>
+    var mySwiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
 @endsection

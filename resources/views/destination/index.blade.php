@@ -7,8 +7,12 @@
     </div>
     @endif
     <div class="flex flex-row justify-between my-10">
-      <h1 class="text-white text-xl md:text-3xl font-semibold">Destination of {{ $package->name }}</h1>
+      <h1 class="text-white text-xl md:text-3xl font-semibold">{{ $package->name }} <span class="inline-block py-1.5 px-2.5 leading-none text-center whitespace-nowrap align-baseline bg-emerald-600 text-white rounded">{{ $package->category->name }}</span></h1>
+      
+      @if ($package->destinations->count() < 1)
       <a href="{{ route('destination.create', $package->id) }}" class="button">Add Destination</a>
+      @endif
+      
     </div>
     <div class="flex flex-col">
       <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ActivityController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DestinationController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PackageDashboard;
@@ -30,6 +32,8 @@ Route::get('/airport', function () {
         'title' => 'Airport'
     ]);
 });
+Route::get('/activities', [ActivityController::class, 'index']);
+Route::get('/activity/{package:slug}', [ActivityController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

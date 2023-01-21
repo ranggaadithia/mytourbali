@@ -63,7 +63,7 @@
               </div>
             </div>
           </a>
-          <a href="">
+          <a href="/activities">
             <div class="w-full flex flex-col items-center hover:scale-105 transition duration-200 hover:ease-in-out">
               <div class="bg-slate-50 p-7 rounded-lg shadow-xl flex flex-col items-center">
                 <div class="w-28 h-28 bg-emerald-400 rounded-full text-white flex items-center justify-center">
@@ -102,12 +102,25 @@
     <div class="py-20 w-full bg-gray-200">
       <div class="container lg:px-20 md:px-4 px-10 mx-auto">
         <h1 class="title">Tour Packages</h1>
+        <h3 class="text-center mt-5 mb-3 text-2xl font-subtitle font-semibold text-emerald-700">Half Day Tour</h3>
         <div class="flex flex-col md:flex-row gap-y-6 items-center justify-center md:justify-start flex-wrap">
-        @foreach ($packages as $package)
+        @foreach ($half_day as $package)
           <div class="md:basis-1/2 lg:basis-1/3 md:px-6 w-full">
             <div class="rounded-xl shadow-lg relative flex flex-col justify-between items-center h-[26rem] overflow-hidden after:content-[''] after:block after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/30 group cursor-pointer">
               <img src="{{ asset('storage/'.$package->image_cover) }}" alt="" class="absolute w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
-              <h4 class="text-white mt-10 z-20 text-center font-subtitle text-xl group-hover:mt-12 transition-all duration-300 ease-in-out">{{ $package->name }}</h4>
+              <h4 class="text-white mt-10 z-20 text-center font-subtitle text-2xl group-hover:mt-12 transition-all duration-300 ease-in-out">{{ $package->name }}</h4>
+              <a href="/tour/{{ $package->slug }}" class="button z-20 lg:opacity-0 mb-12 lg:group-hover:opacity-100 transition duration-300 ease-in-out">Read More</a>
+            </div>
+          </div>
+        @endforeach
+        </div>
+        <h3 class="text-center mt-7 mb-3 text-2xl font-subtitle font-semibold text-emerald-700">Full Day Tour</h3>
+        <div class="flex flex-col md:flex-row gap-y-6 items-center justify-center md:justify-start flex-wrap">
+        @foreach ($full_day as $package)
+          <div class="md:basis-1/2 lg:basis-1/3 md:px-6 w-full">
+            <div class="rounded-xl shadow-lg relative flex flex-col justify-between items-center h-[26rem] overflow-hidden after:content-[''] after:block after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/30 group cursor-pointer">
+              <img src="{{ asset('storage/'.$package->image_cover) }}" alt="" class="absolute w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
+              <h4 class="text-white mt-10 z-20 text-center font-subtitle text-2xl group-hover:mt-12 transition-all duration-300 ease-in-out">{{ $package->name }}</h4>
               <a href="/tour/{{ $package->slug }}" class="button z-20 lg:opacity-0 mb-12 lg:group-hover:opacity-100 transition duration-300 ease-in-out">Read More</a>
             </div>
           </div>

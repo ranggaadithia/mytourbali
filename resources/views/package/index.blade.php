@@ -6,7 +6,6 @@
   </div>
   @endif
   <div class="container mx-auto px-10 flex flex-row justify-between text-white my-6 items-center">
-    
     <h1 class="text-2xl md:text-3xl font-semibold">Package Tour</h1>
     <a href="/package/create" type="button" class="inline-block md:px-6 md:py-4 px-3 py-3 bg-blue-500 text-white font-medium leading-tight  rounded-lg shadow-md ">Add Package</a>
   </div>
@@ -39,7 +38,8 @@
                   {{ $loop->iteration }}
                 </td>
                 <td class="text-sm text-white font-medium px-6 py-4 whitespace-nowrap">
-                  {{ $package->name }}
+                  {{ $package->name }} 
+                  <span class="inline-block py-1.5 px-2.5 leading-none text-center whitespace-nowrap align-baseline text-sm bg-emerald-600 text-white rounded-lg">{{ $package->category->name }}</span>
                 </td>
                 <td class="text-sm text-white font-light px-6 py-4 whitespace-nowrap w-9">
                   <ul>
