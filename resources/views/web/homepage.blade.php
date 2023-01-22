@@ -22,8 +22,7 @@
         <div class="w-full md:w-1/2 md:pr-5 lg:pr-20">
           <h3 class="mt-5 text-2xl font-subtitle font-bold lg:text-3xl">Forget Busy Work,<br/> and Enjoy your Holiday</h3>
           <p class="mt-3 mb-6 mb:mb-5 font-poppins text-gray-600 lg:text-base leading-relaxed">
-            Welcome to My Tour Bali, your premier travel and tourism agency located in the beautiful island of Bali. 
-We offer a wide range of services, including airport transfers, hotel bookings, tour packages, and car rentals. Our tour packages are designed to showcase the best of what Bali has to offer, from its stunning beaches and vibrant culture to its rich history and natural beauty. Our team of professional and friendly drivers will ensure that you have a safe and comfortable journey while exploring Bali. We invite you to browse our website and learn more about the services we offer. If you have any questions or would like to book a tour, please don't hesitate to contact us.
+            Welcome to My Tour Bali, your premier travel and tourism agency located in the beautiful island of Bali. We offer a wide range of services, including airport transfers, tour packages, and car rentals. Our tour packages are designed to showcase the best of what Bali has to offer, from its stunning beaches and vibrant culture to its rich history and natural beauty. Our team of professional and friendly drivers will ensure that you have a safe and comfortable journey while exploring Bali. We invite you to browse our website and learn more about the services we offer. If you have any questions or would like to book a tour, please don't hesitate to contact us.
           </p>
           <a href="" class="button">Contact Us</a>
         </div>
@@ -55,7 +54,7 @@ We offer a wide range of services, including airport transfers, hotel bookings, 
               </div>
             </div>
           </a>
-          <a href="">
+          <a href="/cars">
             <div class="w-full flex flex-col items-center hover:scale-105 transition duration-200 hover:ease-in-out">
               <div class="bg-slate-50 p-7 rounded-lg shadow-xl flex flex-col items-center">
                 <div class="w-28 h-28 bg-emerald-400 rounded-full text-white flex items-center justify-center">

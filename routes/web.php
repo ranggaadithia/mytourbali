@@ -32,6 +32,11 @@ Route::get('/airport', function () {
         'title' => 'Airport'
     ]);
 });
+Route::get('/cars', function () {
+    return view('web.cars', [
+        'title' => 'Cars Charter Services'
+    ]);
+});
 Route::get('/activities', [ActivityController::class, 'index']);
 Route::get('/activity/{package:slug}', [ActivityController::class, 'show']);
 

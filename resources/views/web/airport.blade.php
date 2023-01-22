@@ -285,4 +285,6 @@
     </div>
   </div>
 </div>
+<div class="mt-10"></div>
+@include('components.footer')
 @endsection
