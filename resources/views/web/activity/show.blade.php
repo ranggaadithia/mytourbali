@@ -20,7 +20,7 @@
       <div class="flex flex-col md:flex-row justify-evenly lg:items-center">
         <div class="w-full">
           <div class="w-full md:p-3 lg:p-6 my-6">
-            <div class="swiper mySwiper w-full">
+            <div class="swiper mySwiper w-full md:w-[80%]">
               <div class="swiper-wrapper">
                 @foreach ($destination->photo as $photo)
                 <div class="swiper-slide w-[300px] h-[300px]">

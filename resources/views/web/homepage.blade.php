@@ -21,7 +21,10 @@
       <div class="flex justify-evenly lg:items-center">
         <div class="w-full md:w-1/2 md:pr-5 lg:pr-20">
           <h3 class="mt-5 text-2xl font-subtitle font-bold lg:text-3xl">Forget Busy Work,<br/> and Enjoy your Holiday</h3>
-          <p class="mt-3 mb-6 mb:mb-5 font-poppins text-gray-600 lg:text-base leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem consequatur autem nam. Nesciunt dolores, nihil sunt voluptatum nemo non repudiandae, eum facere, blanditiis quidem voluptates iure laboriosam autem ducimus? Illo, cum fugit. Iusto explicabo veritatis officiis voluptatem soluta perferendis ducimus nesciunt, aliquid vero consectetur quae!</p>
+          <p class="mt-3 mb-6 mb:mb-5 font-poppins text-gray-600 lg:text-base leading-relaxed">
+            Welcome to My Tour Bali, your premier travel and tourism agency located in the beautiful island of Bali. 
+We offer a wide range of services, including airport transfers, hotel bookings, tour packages, and car rentals. Our tour packages are designed to showcase the best of what Bali has to offer, from its stunning beaches and vibrant culture to its rich history and natural beauty. Our team of professional and friendly drivers will ensure that you have a safe and comfortable journey while exploring Bali. We invite you to browse our website and learn more about the services we offer. If you have any questions or would like to book a tour, please don't hesitate to contact us.
+          </p>
           <a href="" class="button">Contact Us</a>
         </div>
         <div class="hidden md:w-1/2 md:flex md:items-center md:p-3 lg:p-6">
@@ -176,10 +179,10 @@
     <div class="py-20 bg-gray-200">
       <div class="container mx-auto px-4 overflow-hidden">
         <h1 class="title">Testimonial</h1>
-        <div class="flex swiper-container">
+        <div class="flex swiper-container w-[80%] md:w-full mx-auto">
           <div class="swiper-wrapper">
             @for ($i = 0; $i < 5; $i++)
-            <div class="swiper-slide">
+            <div class="swiper-slide ">
               <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm scale-75 transition-transform duration-300 ease-in-out" id="card">
                 <div class="flex items-center">
                   <img src="img/testimoni/testi.jpeg" alt="" class="w-16 h-16 object-cover object-center rounded-full">
