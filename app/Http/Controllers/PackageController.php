@@ -22,10 +22,17 @@ class PackageController extends Controller
             'web.homepage',
             [
                 'photos' => Photos::all(),
+                'destinations' => Destination::all(),
                 'half_day' => Package::where('category_id', 3)->get(),
-                'full_day' => Package::where('category_id', 1)->get()
+                'full_day' => Package::where('category_id', 1)->get(),
+
             ]
         );
+    }
+
+    public function showPackage($id)
+    {
+        Package::where('id', $id)->get();
     }
 
     /**

@@ -36,7 +36,6 @@
     </div>
   </section>
 
-
   {{-- services --}}
   <section class="services" id="services">
     <div class="py-20 w-full bg-gray-200 px-10 md:px-2 lg:px-20">
@@ -86,18 +85,19 @@
     <div class="py-20 px-4 md:px-10">
       <h1 class="title">Top Destinations</h1>
       <div class="flex flex-row gap-y-4 items-center justify-between flex-wrap">
-        @for ($i = 0; $i < 10; $i++)
-        <a href="" class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4">
-          <div class="w-full md:h-64 h-56 rounded-xl shadow-lg relative overflow-hidden after:content-[''] after:block after:absolute after:inset-x-0 after:bottom-0 after:h-16 after:bg-gradient-to-t after:backdrop-blur-xl after:bg-black/10 group">
-            <img src="img/pura.jpg" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
-            <h4 class="text-white absolute bottom-6 inset-x-1 z-20 text-center font-subtitle text-xl">Beratan Temple</h4>
+        @foreach ($destinations->shuffle()->take(10) as $destination)
+        <a href="/tour/{{ $destination->package_id }}#{{ $destination->name }}" class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4">
+          <div class="w-full md:h-64 h-56 rounded-xl shadow-lg overflow-hidden relative group">
+            <div class="h-16 w-full z-20 absolute bottom-0 flex items-center justify-center backdrop-blur-xl px-2">
+              <h4 class="text-white text-center font-subtitle text-xl z-30">{{ $destination->name }}</h4>
+            </div>
+            <img src="{{ asset('storage/'. $destination->photo[0]->image) }}" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
           </div>
         </a>
-        @endfor
+        @endforeach
       </div>
     </div>
   </section>
-
 
   {{-- tour packages --}}
   <section class="tour-packages" id="tour-packages">
@@ -148,7 +148,7 @@
             <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
             <div class="fixed inset-0 z-30 overflow-y-auto">
               <div class="flex min-h-full items-center justify-center p-0 text-center sm:items-center sm:p-0">
-                <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 w-full sm:max-w-lg flex flex-col md:flex-row">
+                <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 h-auto lg:h-96 w-5/6 flex flex-col md:flex-row">
                   <div class="w-full md:w-1/2">
                     <img src="{{ asset('storage/'.$photo->image) }}" alt="" class="relative w-full h-full object-cover">
                     <button class="absolute top-2 right-4 text-4xl text-white md:text-black" id="close">&times;</button>
