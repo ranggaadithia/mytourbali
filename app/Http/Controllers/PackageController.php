@@ -7,6 +7,7 @@ use App\Http\Requests\StorePackageRequest;
 use App\Http\Requests\UpdatePackageRequest;
 use App\Models\Destination;
 use App\Models\Photos;
+use App\Models\Review;
 
 class PackageController extends Controller
 {
@@ -25,7 +26,7 @@ class PackageController extends Controller
                 'destinations' => Destination::all(),
                 'half_day' => Package::where('category_id', 3)->get(),
                 'full_day' => Package::where('category_id', 1)->get(),
-
+                'reviews' => Review::all()
             ]
         );
     }

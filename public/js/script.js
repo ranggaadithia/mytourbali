@@ -1,3 +1,5 @@
+// const { add } = require("lodash");
+
 const close = document.querySelectorAll('#close');
 const showModal = document.querySelectorAll('#showModal');
 const modal = document.querySelectorAll('#modal');
@@ -88,9 +90,27 @@ const desciptionTitle = document.querySelectorAll("#description h1");
 
 for (let i = 0; i < desciptionList.length; i++) {
   desciptionList[i].classList.add('list-disc', 'list-inside')
-  console.log(desciptionList[i]);
 }
 for (let j = 0; j < desciptionList.length; j++) {
   desciptionTitle[j].classList.add('font-subtitle', 'text-2xl');
+}
+
+
+const excerpt = document.querySelectorAll("#excerpt")
+const excerptButton = document.querySelectorAll("#excerptButton")
+const descButton = document.querySelectorAll("#descButton")
+const description = document.querySelectorAll("#description")
+
+for (let i = 0; i < excerpt.length; i++) {
+  excerptButton[i].addEventListener('click', function() {
+    description[i].classList.remove('hidden')
+    excerpt[i].classList.add('hidden')
+  })
+
+  descButton[i].addEventListener('click', function() {
+    description[i].classList.add('hidden')
+    excerpt[i].classList.remove('hidden')
+  })
+  
 }
 

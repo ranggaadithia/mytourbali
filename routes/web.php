@@ -7,9 +7,11 @@ use App\Http\Controllers\PackageController;
 use App\Http\Controllers\PackageDashboard;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
 use App\Models\Destination;
 use App\Models\Package;
 use App\Models\Photos;
+use App\Models\Review;
 use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Facades\Route;
@@ -48,6 +50,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::resource('photo', PhotoController::class)->only('destroy');
+    Route::resource('review', ReviewController::class);
     Route::resource('/package', PackageDashboard::class);
     Route::get('package/destination/{package:id}', [DestinationController::class, 'index'])->name('destination.index');
     Route::get('package/destination/{package:id}/create', [DestinationController::class, 'create'])->name('destination.create');
