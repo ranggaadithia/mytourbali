@@ -52,4 +52,9 @@ $app->singleton(
 |
 */
 
+// seo
+
+$app->register(Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class);
+
+
 return $app;

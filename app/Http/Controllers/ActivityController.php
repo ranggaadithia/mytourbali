@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Package;
 use Illuminate\Http\Request;
+use Artesaos\SEOTools\Facades\SEOTools;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
+
 
 class ActivityController extends Controller
 {
@@ -47,6 +51,11 @@ class ActivityController extends Controller
      */
     public function show(Package $package)
     {
+        SEOTools::setTitle("$package->name | My Tour Bali");
+        SEOTools::setDescription(strip_tags($package->destinations[0]->description));
+        SEOTools::opengraph()->setUrl(url()->current());
+        SEOTools::opengraph()->addProperty('type', 'WebPage');
+        OpenGraph::addImage(asset('storage/' . $package->image));
         $destination = $package->destinations[0];
         return view('web.activity.show', compact('destination', 'package'));
     }

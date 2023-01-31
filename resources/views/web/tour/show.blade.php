@@ -52,7 +52,7 @@
     <div class="flex justify-center mt-20">
       <div class="w-full md:w-2/3 rounded-lg overflow-hidden shadow-md">
         <div class="w-full text-center p-4 bg-emerald-500">
-          <h2 class="text-white font-subtitle text-xl font-semibold"> Prepare your journey to {{ Str::of($package->name)->trim("Tour") }}</h2>
+          <h2 class="text-white font-subtitle text-xl font-semibold"> Prepare your journey to {{ $package->name }}</h2>
         </div>
         <div class="p-8" id="description">
           {!! $package->description !!}

@@ -125,6 +125,11 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'providers' => [
+        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+        // ...
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
@@ -212,6 +217,19 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
-    'whatsapp' => 'https://wa.me/6285888821190'
+    'aliases' => [
+        'SEOMeta'       => Artesaos\SEOTools\Facades\SEOMeta::class,
+        'OpenGraph'     => Artesaos\SEOTools\Facades\OpenGraph::class,
+        'Twitter'       => Artesaos\SEOTools\Facades\TwitterCard::class,
+        'JsonLd'        => Artesaos\SEOTools\Facades\JsonLd::class,
+        'JsonLdMulti'   => Artesaos\SEOTools\Facades\JsonLdMulti::class,
+        // or
+        'SEO' => Artesaos\SEOTools\Facades\SEOTools::class,
+        // ...
+    ],
+
+    'whatsapp' => 'https://wa.me/6285888821190',
+
+
 
 ];
