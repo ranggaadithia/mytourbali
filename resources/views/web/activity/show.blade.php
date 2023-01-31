@@ -24,7 +24,7 @@
               <div class="swiper-wrapper">
                 @foreach ($destination->photo as $photo)
                 <div class="swiper-slide w-[300px] h-[300px]">
-                  <img src="{{ asset('storage/'.$photo->image) }}" class="block object-cover w-80 h-80 object-center" />
+                  <img src="{{ asset('storage/'.$photo->image) }}" alt="{{ $photo->name }}" class="block object-cover w-80 h-80 object-center" loading="lazy" />
                 </div>
                 @endforeach
               </div>

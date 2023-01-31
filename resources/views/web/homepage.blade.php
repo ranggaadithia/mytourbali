@@ -28,7 +28,7 @@
         </div>
         <div class="hidden md:w-1/2 md:flex md:items-center md:p-3 lg:p-6">
           <figure>
-            <img src="img/pantai.jpg" alt="" class="rounded-xl shadow-lg">
+            <img src="img/pantai.jpg" alt="" class="rounded-xl shadow-lg" loading="lazy">
             <figcaption class="text-sm text-gray-500">*klingking beach</figcaption>
           </figure>
         </div>
@@ -91,7 +91,7 @@
             <div class="h-16 w-full z-20 absolute bottom-0 flex items-center justify-center backdrop-blur-xl px-2">
               <h4 class="text-white text-center font-subtitle text-xl z-30">{{ $destination->name }}</h4>
             </div>
-            <img src="{{ asset('storage/'. $destination->photo[0]->image) }}" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
+            <img src="{{ asset('storage/'. $destination->photo[0]->image) }}" alt="{{ $destination->name }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out" loading="lazy">
           </div>
         </a>
         @endforeach
@@ -109,7 +109,7 @@
         @foreach ($half_day as $package)
           <div class="md:basis-1/2 lg:basis-1/3 md:px-6 w-full">
             <div class="rounded-xl shadow-lg relative flex flex-col justify-between items-center h-[26rem] overflow-hidden after:content-[''] after:block after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/30 group cursor-pointer">
-              <img src="{{ asset('storage/'.$package->image_cover) }}" alt="" class="absolute w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
+              <img src="{{ asset('storage/'.$package->image_cover) }}" alt="{{ $package->name }}" class="absolute w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out" loading="lazy">
               <h4 class="text-white mt-10 z-20 text-center font-subtitle text-2xl group-hover:mt-12 transition-all duration-300 ease-in-out">{{ $package->name }}</h4>
               <a href="/tour/{{ $package->slug }}" class="button z-20 lg:opacity-0 mb-12 lg:group-hover:opacity-100 transition duration-300 ease-in-out">Read More</a>
             </div>
@@ -121,7 +121,7 @@
         @foreach ($full_day as $package)
           <div class="md:basis-1/2 lg:basis-1/3 md:px-6 w-full">
             <div class="rounded-xl shadow-lg relative flex flex-col justify-between items-center h-[26rem] overflow-hidden after:content-[''] after:block after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/30 group cursor-pointer">
-              <img src="{{ asset('storage/'.$package->image_cover) }}" alt="" class="absolute w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
+              <img src="{{ asset('storage/'.$package->image_cover) }}" alt="{{ $package->name }}" class="absolute w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out" loading="lazy">
               <h4 class="text-white mt-10 z-20 text-center font-subtitle text-2xl group-hover:mt-12 transition-all duration-300 ease-in-out">{{ $package->name }}</h4>
               <a href="/tour/{{ $package->slug }}" class="button z-20 lg:opacity-0 mb-12 lg:group-hover:opacity-100 transition duration-300 ease-in-out">Read More</a>
             </div>
@@ -141,7 +141,7 @@
           @foreach ($photos->shuffle()->take(10) as $photo)    
           <button class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4" id="showModal" onclick="return {{ $photo->id }}">
             <div class="w-full md:h-48 h-40 rounded-xl shadow-lg relative overflow-hidden group bg-black">
-              <img src="{{ asset('storage/'.$photo->image) }}" alt="" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out">
+              <img src="{{ asset('storage/'.$photo->image) }}" alt="{{ $photo->name }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out" loading="lazy">
             </div>
           </button>
           <div class="relative z-30 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="modal">
@@ -150,7 +150,7 @@
               <div class="flex min-h-full items-center justify-center p-0 text-center sm:items-center sm:p-0">
                 <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 h-auto lg:h-96 w-5/6 flex flex-col md:flex-row">
                   <div class="w-full md:w-1/2">
-                    <img src="{{ asset('storage/'.$photo->image) }}" alt="" class="relative w-full h-full object-cover">
+                    <img src="{{ asset('storage/'.$photo->image) }}" alt="{{ $photo->name }}" class="relative w-full h-full object-cover" loading="lazy">
                     <button class="absolute top-2 right-4 text-4xl text-white md:text-black" id="close">&times;</button>
                   </div>
                   <div class="w-full md:w-1/2 p-4 md:py-12 md:px-4">
@@ -181,7 +181,7 @@
             <div class="swiper-slide">
               <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm scale-75 transition-transform duration-300 ease-in-out" id="card">
                 <div class="flex items-center">
-                  <img src="{{ asset('storage/'. $review->image) }}" alt="" class="w-16 h-16 object-cover object-center rounded-full">
+                  <img src="{{ asset('storage/'. $review->image) }}" alt="" class="w-16 h-16 object-cover object-center rounded-full" loading="lazy">
                   <div class="flex flex-col ml-3">
                     <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">{{ $review->name }}</h5>
                     <ul class="flex">

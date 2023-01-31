@@ -27,7 +27,7 @@
                 <div class="swiper-wrapper">
                   <!-- Slides -->
                   @foreach ($destination->photo as $photo)
-                  <div class="swiper-slide rounded-md"><img src="{{ asset('storage/'.$photo->image) }}" alt="" class="object-cover w-[350px] h-[350px]"></div>
+                  <div class="swiper-slide rounded-md"><img src="{{ asset('storage/'.$photo->image) }}" alt="{{ $photo->name }}" class="object-cover w-[350px] h-[350px]" loading="lazy"></div>
                   @endforeach
                 </div>
               </div>
@@ -40,7 +40,7 @@
               <div class="swiper-wrapper">
                 <!-- Slides -->
                 @foreach ($destination->photo as $photo)
-                <div class="swiper-slide rounded-md"><img src="{{ asset('storage/'.$photo->image) }}" alt="" class="object-cover w-[350px] h-[350px]"></div>
+                <div class="swiper-slide rounded-md"><img src="{{ asset('storage/'.$photo->image) }}" alt="{{ $photo->name }}" class="object-cover w-[350px] h-[350px]" loading="lazy"></div>
                 @endforeach
               </div>
             </div>
