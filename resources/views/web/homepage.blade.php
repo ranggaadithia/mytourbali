@@ -24,7 +24,7 @@
           <p class="mt-3 mb-6 mb:mb-5 font-poppins text-gray-600 lg:text-base leading-relaxed">
             Welcome to My Tour Bali, your premier travel and tourism agency located in the beautiful island of Bali. We offer a wide range of services, including airport transfers, tour packages, and car rentals. Our tour packages are designed to showcase the best of what Bali has to offer, from its stunning beaches and vibrant culture to its rich history and natural beauty. Our team of professional and friendly drivers will ensure that you have a safe and comfortable journey while exploring Bali. We invite you to browse our website and learn more about the services we offer. If you have any questions or would like to book a tour, please don't hesitate to contact us.
           </p>
-          <a href="" class="button">Contact Us</a>
+          <a href="{{ config('app.whatsapp') }}" class="button">Contact Us</a>
         </div>
         <div class="hidden md:w-1/2 md:flex md:items-center md:p-3 lg:p-6">
           <figure>
@@ -86,7 +86,7 @@
       <h1 class="title">Top Destinations</h1>
       <div class="flex flex-row gap-y-4 items-center justify-between flex-wrap">
         @foreach ($destinations->shuffle()->take(10) as $destination)
-        <a href="/tour/{{ $destination->package_id }}#{{ $destination->name }}" class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4">
+        <a href="/destination/{{ $destination->package_id }}#{{ $destination->name }}" class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4">
           <div class="w-full md:h-64 h-56 rounded-xl shadow-lg overflow-hidden relative group">
             <div class="h-16 w-full z-20 absolute bottom-0 flex items-center justify-center backdrop-blur-xl px-2">
               <h4 class="text-white text-center font-subtitle text-xl z-30">{{ $destination->name }}</h4>

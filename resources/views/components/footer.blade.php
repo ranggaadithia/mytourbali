@@ -30,16 +30,16 @@
             </h6>
             
             <p class="mb-4">
-              <a href="#!" class="text-emerald-600">Services</a>
+              <a href="/#services" class="text-emerald-600">Services</a>
             </p>
             <p class="mb-4">
-              <a href="#!" class="text-emerald-600">Destinations</a>
+              <a href="/#destinations" class="text-emerald-600">Destinations</a>
             </p>
             <p class="mb-4">
-              <a href="#!" class="text-emerald-600">Tour Packages</a>
+              <a href="/#tour-packages" class="text-emerald-600">Tour Packages</a>
             </p>
             <p class="mb-4">
-              <a href="#!" class="text-emerald-600">Gallery</a>
+              <a href="/#gallery" class="text-emerald-600">Gallery</a>
             </p>
           
           </div>
@@ -50,11 +50,11 @@
               Social Media
             </h6>
             <p class="mb-4">
-              <a href="#!" class="text-emerald-600"><i class="icofont-instagram"></i> @mytourbali</a>
+              <a href="https://www.instagram.com/mytour.bali/" class="text-emerald-600"><i class="icofont-instagram"></i> @mytour.bali</a>
             </p>
             <p class="mb-4">
-              <a href="#!" class="text-emerald-600">
-                <i class="icofont-facebook"></i> @mytourbali</a>
+              <a href="https://www.facebook.com/people/My-Tour-Bali/100089709491827/" class="text-emerald-600">
+                <i class="icofont-facebook"></i> My Tour Bali</a>
             </p>
           </div>
           <div class="mt-5">
@@ -62,12 +62,19 @@
               Contact
             </h6>
             <p class="mb-4">
-              <a href="#!" class="">
-                <i class="icofont-email"></i> info@mytourbali.com</a>
+              <a href="mailto:mytourbali45@gmail.com" class="">
+                <i class="icofont-email"></i> mytourbali45@gmail.com</a>
             </p>
             <p class="mb-4">
-              <a href="#!" class="">
-                <i class="icofont-whatsapp"></i> +62-887-341-6379</a>
+              <a href="{{ config('app.whatsapp') }}" class="">
+                <i class="icofont-whatsapp"></i> +62-888-821-190
+              </a>
+            </p>
+            <p class="mb-4">
+              <a href="https://wa.me/6285737691010" class="">
+                <i class="icofont-whatsapp"></i> 
+                +62-857-3769-1010 (Putu)
+              </a>
             </p>
           </div>
         </div>
@@ -75,7 +82,7 @@
     </div>
   </div>
   <div class="text-center p-6 bg-gray-900 line border-t-2 border-emerald-100">
-    <span>© 2021 Copyright:</span>
-    <a class="text-emerald-600 font-semibold" href="https://tailwind-elements.com/">Tailwind Elements</a>
+    <span>© 2023 Copyright:</span>
+    <a class="text-emerald-600 font-semibold" href="/">My Tour Bali</a>
   </div>
 </footer>

@@ -57,7 +57,7 @@
         <div class="p-8" id="description">
           {!! $package->description !!}
           <div class="w-full text-center mt-7">
-            <a href="" class="button">Start your journey now!</a>
+            <a href="{{ config('app.whatsapp') }}" class="button">Start your journey now!</a>
           </div>
         </div>
         <div class="line-pattern mx-auto"></div>
@@ -65,7 +65,7 @@
     </div>
     <div class="w-full mt-10 text-center p-10 border-t-2 border-t-emerald-500">
       <h4 class="font-subtitle text-2xl font-semibold">Need More Information?</h4>
-      <a href="" class="button mt-3"><i class="icofont-brand-whatsapp"></i> Contact Us</a>
+      <a href="{{ config('app.whatsapp') }}" class="button mt-3"><i class="icofont-brand-whatsapp"></i> Contact Us</a>
     </div>
   </section>
 

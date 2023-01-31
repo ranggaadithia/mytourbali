@@ -212,4 +212,6 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    'whatsapp' => 'https://wa.me/6285888821190'
+
 ];

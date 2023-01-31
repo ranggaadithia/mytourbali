@@ -29,7 +29,7 @@
           <a class="inline-block text-white no-underline hover:text-emerald-200 hover:text-underline py-2 px-4" href="#testimonial">Testimoni</a>
         </li>
         <li class="mr-3 text-center">
-          <a class="button w-full py-2 px-4 font-subtitle" href="#">Book Now!</a>
+          <a class="button w-full py-2 px-4 font-subtitle" href="{{ config('app.whatsapp') }}">Book Now!</a>
         </li>
       </ul>
     </div>

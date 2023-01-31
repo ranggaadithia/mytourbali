@@ -274,7 +274,7 @@
                   <li>Please contact us for airport pickup/drop off, as depends on location that you stay.</li>
                 </ul>
                 <div class="w-full text-center mt-7">
-                  <a href="" class="button">Contact us</a>
+                  <a href="{{ config('app.whatsapp') }}" class="button">Contact us</a>
                 </div>
               </div>
               <div class="line-pattern mx-auto"></div>
