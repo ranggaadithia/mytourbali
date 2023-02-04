@@ -23,7 +23,6 @@
     id="WhatsApp"
   ><i class="icofont-brand-whatsapp icofont-2x"></i></a>
 
-  @vite('resources/js/index.min.js')
   <script src="/js/script.js"></script>
 </body>
 </html>
