@@ -34,7 +34,7 @@
             </div>
             <p class="mt-3 mb-6 mb:mb-5 font-poppins text-gray-600 lg:text-base leading-relaxed">{{ $destination->description }}</p>
           </div>
-          <div class="hidden md:w-1/2 md:flex md:items-center md:p-3 lg:p-6 my-5" id="swiper">
+          <div class="hidden md:w-1/2 md:flex md:items-center md:p-3 lg:p-6 my-5" id="card">
             <div class="swiper swiperDes w-80 h-80">
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">

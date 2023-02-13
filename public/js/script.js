@@ -72,7 +72,7 @@ const imageShow = new Swiper('.swiperDes', {
   grabCursor: true,
 });
 
-const card = document.querySelectorAll("#swiper")
+const card = document.querySelectorAll("#card")
 
 for(i = 0; i < card.length; i++)
 {
