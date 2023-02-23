@@ -86,7 +86,7 @@
       <h1 class="title">Top Destinations</h1>
       <div class="flex flex-row gap-y-4 items-center justify-between flex-wrap">
         @foreach ($destinations->shuffle()->take(10) as $destination)
-        <a href="/destination/{{ $destination->package_id }}#{{ $destination->name }}" class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4">
+        <a href="/tour/{{ $destination->package->slug }}#{{ $destination->name }}" class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4">
           <div class="w-full md:h-64 h-56 rounded-xl shadow-lg overflow-hidden relative group">
             <div class="h-16 w-full z-20 absolute bottom-0 flex items-center justify-center backdrop-blur-xl px-2">
               <h4 class="text-white text-center font-subtitle text-xl z-30">{{ $destination->name }}</h4>
@@ -141,7 +141,7 @@
           @foreach ($photos->shuffle()->take(10) as $photo)    
           <button class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4" id="showModal" onclick="return {{ $photo->id }}">
             <div class="w-full md:h-48 h-40 rounded-xl shadow-lg relative overflow-hidden group bg-black">
-              <img src="{{ asset('storage/'.$photo->image) }}" alt="{{ $photo->name }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out" loading="lazy">
+              <img src="{{ asset('storage/'.$photo->image) }}" alt="{{ $photo->destination->name }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out" loading="lazy">
             </div>
           </button>
           <div class="relative z-30 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="modal">
@@ -150,12 +150,12 @@
               <div class="flex min-h-full items-center justify-center p-0 text-center sm:items-center sm:p-0">
                 <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 h-auto lg:h-96 w-5/6 flex flex-col md:flex-row">
                   <div class="w-full md:w-1/2">
-                    <img src="{{ asset('storage/'.$photo->image) }}" alt="{{ $photo->name }}" class="relative w-full h-full object-cover" loading="lazy">
+                    <img src="{{ asset('storage/'.$photo->image) }}" alt="{{ $photo->destination->name }}" class="relative w-full h-full object-cover" loading="lazy">
                     <button class="absolute top-2 right-4 text-4xl text-white md:text-black" id="close">&times;</button>
                   </div>
                   <div class="w-full md:w-1/2 p-4 md:py-12 md:px-4">
-                    <h2 class="text-xl font-subtitle font-semibold mb-1 md:text-2xl md:mb-3 text-gray-700">{{ $photo->name }}</h2>
-                    <p>{{ $photo->description }}</p>
+                    <h2 class="text-xl font-subtitle font-semibold mb-1 md:text-2xl md:mb-3 text-gray-700">{{ $photo->destination->name }}</h2>
+                    <p>{{ $photo->destination->description }}</p>
                   </div>
                 </div>
               </div>
