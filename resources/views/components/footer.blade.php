@@ -67,7 +67,7 @@
             </p>
             <p class="mb-4">
               <a href="{{ config('app.whatsapp') }}" class="">
-                <i class="icofont-whatsapp"></i> +62-888-821-190
+                <i class="icofont-whatsapp"></i> +62-858-8882-1190
               </a>
             </p>
             <p class="mb-4">
