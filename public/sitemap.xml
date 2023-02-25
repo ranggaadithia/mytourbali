@@ -9,42 +9,47 @@
 
 <url>
   <loc>https://mytourbali.com/</loc>
-  <lastmod>2023-02-12T04:00:18+00:00</lastmod>
+  <lastmod>2023-02-25T07:07:58+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://mytourbali.com/airport</loc>
-  <lastmod>2023-02-12T04:00:18+00:00</lastmod>
+  <lastmod>2023-02-25T07:07:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mytourbali.com/cars</loc>
-  <lastmod>2023-02-12T04:00:18+00:00</lastmod>
+  <lastmod>2023-02-25T07:07:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mytourbali.com/activities</loc>
-  <lastmod>2023-02-12T04:00:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mytourbali.com/destination/1</loc>
-  <lastmod>2023-02-12T04:00:18+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://mytourbali.com/destination/2</loc>
-  <lastmod>2023-02-12T04:00:18+00:00</lastmod>
+  <lastmod>2023-02-25T07:07:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mytourbali.com/tour/kintamani-tour</loc>
-  <lastmod>2023-02-12T04:00:18+00:00</lastmod>
+  <lastmod>2023-02-25T07:07:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mytourbali.com/tour/bedugul-tour</loc>
+  <lastmod>2023-02-25T07:07:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mytourbali.com/tour/uluwatu-dinner</loc>
+  <lastmod>2023-02-25T07:07:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://mytourbali.com/tour/besakih-tours</loc>
+  <lastmod>2023-02-25T07:07:58+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://mytourbali.com/activity/bali-zoo-tour-package</loc>
-  <lastmod>2023-02-12T04:00:18+00:00</lastmod>
+  <lastmod>2023-02-25T07:07:58+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
