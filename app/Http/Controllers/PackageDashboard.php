@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Package;
 use App\Models\Category;
+use App\Models\Photos;
+use App\Models\Destination;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
@@ -146,6 +148,14 @@ class PackageDashboard extends Controller
         }
 
         Package::destroy($package->id);
+
+        $destinationPhotos = Destination::where('package_id', $package->id)->get();
+
+        foreach ($destinationPhotos as $photo) {
+            Photos::where('destination_id', $photo->id)->delete();
+        }
+
+        Destination::where('package_id', $package->id)->delete();
 
         return redirect()->route('package.index')->with('status', "package successfully deleted");
     }

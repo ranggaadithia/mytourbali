@@ -67,7 +67,7 @@
       <div class="p-6">
         <h5 class="text-gray-900 text-xl font-medium mb-2">Alphard</h5>
         <p class="text-gray-700 text-base mb-4">
-          <b>Capacity : </b> 7 people
+          <b>Capacity : </b> 5 people
         </p>
       </div>
     </div>
@@ -76,7 +76,7 @@
       <div class="p-6">
         <h5 class="text-gray-900 text-xl font-medium mb-2">Hyundai H1</h5>
         <p class="text-gray-700 text-base mb-4">
-          <b>Capacity : </b> 7 people
+          <b>Capacity : </b> 9 people
         </p>
       </div>
     </div>

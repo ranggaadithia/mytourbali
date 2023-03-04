@@ -40,7 +40,7 @@ class DestinationController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|unique:destinations|max:255',
+            'name' => 'required|max:255',
             'description' => 'required',
         ]);
 
