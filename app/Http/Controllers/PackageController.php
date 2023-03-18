@@ -46,7 +46,12 @@ class PackageController extends Controller
             'web.homepage',
             [
                 'photos' => Photos::all(),
-                'destinations' => Destination::all(),
+                'destinations' => Destination::where(function ($query) {
+                    $query->where('name', 'not like', '%lunch%')
+                        ->where('name', 'not like', '%dinner%')
+                        ->where('name', 'not like', '%coffee%')
+                        ->where('name', 'not like', '%breakfast%');
+                })->get(),
                 'half_day' => Package::where('category_id', 3)->get(),
                 'full_day' => Package::where('category_id', 1)->get(),
                 'reviews' => Review::all()
