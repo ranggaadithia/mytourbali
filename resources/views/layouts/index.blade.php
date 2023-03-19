@@ -10,6 +10,16 @@
   {{-- search console google --}}
   <meta name="google-site-verification" content="2i3lsorc6dzkXgMecou7VghzDgUdWPZt7pYv8WV_GL4" />
   
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QP8LRLDLPE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QP8LRLDLPE');
+  </script>
+
   {{-- SEO --}}
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   {!! SEO::generate() !!}
