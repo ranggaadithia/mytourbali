@@ -161,12 +161,12 @@
   <section class="testimonial" id="testimonial">
     <div class="py-20 bg-gray-200">
       <div class="container mx-auto px-4 overflow-hidden">
-        <h1 class="title">Testimonial</h1>
+        <h1 class="title">Reviews</h1>
         <div class="flex swiper-container w-[80%] md:w-full mx-auto">
           <div class="swiper-wrapper">
             @foreach ($reviews as $review)
             <div class="swiper-slide">
-              <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm scale-75 transition-transform duration-300 ease-in-out" id="card">
+              <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm scale-75 transition-transform duration-300 ease-in-out mx-auto" id="card">
                 <div class="flex items-center">
                   <img src="{{ asset('storage/'. $review->image) }}" alt="" class="w-16 h-16 object-cover object-center rounded-full" loading="lazy">
                   <div class="flex flex-col ml-3">
@@ -188,7 +188,6 @@
                         </li> 
                         @endfor
                       @endif
-                      
                     </ul>
                   </div>
                 </div>
@@ -206,7 +205,9 @@
           </div>  
           <div class="swiper-pagination"></div>
         </div>
-        
+        <div class="text-center mt-5">
+          <a href="https://www.tripadvisor.com/UserReviewEdit-g297697-d25288635-My_Tour_Bali-Kuta_Kuta_District_Bali.html" class="button" target="_blank">Give your Review!</a> 
+        </div>
       </div>
     </div>
   </section>

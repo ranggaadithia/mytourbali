@@ -28,6 +28,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::domain('links.' . config('app.domain'))->group(function () {
+    Route::get('/', function () {
+        return redirect('https://msha.ke/mytourbali');
+    });
+});
+
 Route::resource('/', PackageController::class);
 Route::get('/tour/{package:slug}', [PackageController::class, 'show']);
 Route::get('/destination/{package:id}', [PackageController::class, 'show']);
