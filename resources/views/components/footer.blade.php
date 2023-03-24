@@ -41,7 +41,6 @@
             <p class="mb-4">
               <a href="/#gallery" class="text-emerald-600">Gallery</a>
             </p>
-          
           </div>
         </div>
         <div class="flex flex-col md:flex-col">
@@ -50,11 +49,16 @@
               Social Media
             </h6>
             <p class="mb-4">
-              <a href="https://www.instagram.com/mytour.bali/" class="text-emerald-600"><i class="icofont-instagram"></i> @mytour.bali</a>
+              <a href="https://instagram.com/balidriverputu?igshid=ZDdkNTZiNTM=" class="text-emerald-600" target="_blank"><i class="icofont-instagram"></i> balidriverputu</a>
             </p>
             <p class="mb-4">
-              <a href="https://www.facebook.com/people/My-Tour-Bali/100089709491827/" class="text-emerald-600">
-                <i class="icofont-facebook"></i> My Tour Bali</a>
+              <a href="https://www.facebook.com/putu.balidriver.3?mibextid=ZbWKwL" class="text-emerald-600" target="_blank">
+                <i class="icofont-facebook"></i> Putu Bali Driver</a>
+            </p>
+            <p class="mb-4">
+              <a href="https://www.tripadvisor.com/Attraction_Review-g297697-d25288635-Reviews-My_Tour_Bali-Kuta_Kuta_District_Bali.html" class="text-emerald-600 flex" target="_blank">
+                <img src="icofont/tripadvisor-logo.svg" alt="" class="w-5 mr-1"> My Tour Bali
+              </a>
             </p>
           </div>
           <div class="mt-5">
@@ -62,8 +66,8 @@
               Contact
             </h6>
             <p class="mb-4">
-              <a href="mailto:mytourbali45@gmail.com" class="">
-                <i class="icofont-email"></i> mytourbali45@gmail.com</a>
+              <a href="mailto:darma_eka89@yahoo.co.id" class="">
+                <i class="icofont-email"></i> darma_eka89@yahoo.co.id</a>
             </p>
             <p class="mb-4">
               <a href="{{ config('app.whatsapp') }}" class="">

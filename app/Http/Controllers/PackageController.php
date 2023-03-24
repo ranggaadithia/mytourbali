@@ -52,8 +52,7 @@ class PackageController extends Controller
                         ->where('name', 'not like', '%coffee%')
                         ->where('name', 'not like', '%breakfast%');
                 })->get(),
-                'half_day' => Package::where('category_id', 3)->get(),
-                'full_day' => Package::where('category_id', 1)->get(),
+                'packages' => Package::where('category_id', 1)->get(),
                 'reviews' => Review::all()
             ]
         );
