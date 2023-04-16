@@ -2,16 +2,9 @@
 
 @section('container')
 
-  @include('components.navbar')
+  @include('components.navbar-dark')
   
 
-  <div class="w-full h-screen relative flex items-center justify-center after:content-[''] after:block after:w-full after:h-screen after:absolute after:top-0 after:bg-gradient-to-b after:from-black/30">
-    <div class="absolute pb-12 z-10">
-      <h1 class="text-white text-center font-title text-5xl">{{ $package->name }}</h1>
-      <div class="line-pattern mx-auto mt-4"></div>
-    </div>
-    <img src="{{ asset('storage/'.$package->image) }}" alt="" class="w-full h-screen object-cover">
-  </div>
 
 
   <section class="tour" id="tour">
@@ -35,19 +28,8 @@
         </div>
       </div>
     </div>
-    <div class="flex justify-center mt-20">
-      <div class="w-full md:w-2/3 rounded-lg overflow-hidden shadow-md">
-        <div class="w-full text-center p-4 bg-emerald-500">
-          <h2 class="text-white font-subtitle text-xl font-semibold"> Prepare your journey to {{ $destination->name }}</h2>
-        </div>
-        <div class="p-8" id="description">
-          {!! $package->description !!}
-          <div class="w-full text-center mt-7">
-            <a href="{{ config('app.whatsapp') }}" class="button">Start your journey now!</a>
-          </div>
-        </div>
-        <div class="line-pattern mx-auto"></div>
-      </div>
+    <div class="text-center">
+      <a href="{{ config('app.whatsapp') }}" class="button text-center">Start your journey now!</a>
     </div>
     <div class="w-full mt-10 text-center p-10 border-t-2 border-t-emerald-500">
       <h4 class="font-subtitle text-2xl font-semibold">Need More Information?</h4>
