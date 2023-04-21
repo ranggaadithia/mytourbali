@@ -48,6 +48,7 @@ class PackageDashboard extends Controller
             'slug' => 'required|unique:packages',
             'image_cover' => 'image|file|max:25000',
             'image' => 'image|file|max:25000',
+            'description' => 'required',
             'category_id' => 'required'
         ]);
         $validated = $validator->validated();
@@ -105,6 +106,7 @@ class PackageDashboard extends Controller
             'slug' => 'required',
             'image_cover' => 'image|file|max:25000',
             'image' => 'image|file|max:25000',
+            'description' => 'required',
             'category_id' => 'required'
         ]);
 
