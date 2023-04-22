@@ -56,7 +56,7 @@
                 <i class="icofont-facebook"></i> Putu Bali Driver</a>
             </p>
             <p class="mb-4 block">
-              <a href="https://www.tripadvisor.com/Attraction_Review-g297697-d25288635-Reviews-My_Tour_Bali-Kuta_Kuta_District_Bali.html" class="text-emerald-600 flex justify-center" target="_blank">
+              <a href="https://www.tripadvisor.com/Attraction_Review-g297697-d25288635-Reviews-My_Tour_Bali-Kuta_Kuta_District_Bali.html" class="text-emerald-600 flex justify-center md:justify-start" target="_blank">
                 <img src="/icofont/tripadvisor-logo.svg" alt="" class="w-5 mr-1 "> My Tour Bali
               </a>
             </p>
