@@ -18,4 +18,7 @@
     @endforeach
     </div>
 </div>
+
+<div class="mt-32"></div>
+@include('components.footer')
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Package;
 use App\Http\Requests\StorePackageRequest;
 use App\Http\Requests\UpdatePackageRequest;
+use App\Models\Category;
 use App\Models\Destination;
 use App\Models\Photos;
 use App\Models\Review;
@@ -22,7 +23,6 @@ class PackageController extends Controller
      */
     public function index()
     {
-
         $description = "Welcome to My Tour Bali, your premier travel and tourism agency located in the beautiful island of Bali. We offer a wide range of services, including airport transfers, tour packages, and car rentals. Our tour packages are designed to showcase the best of what Bali has to offer, from its stunning beaches and vibrant culture to its rich history and natural beauty. Our team of professional and friendly drivers will ensure that you have a safe and comfortable journey while exploring Bali. We invite you to browse our website and learn more about the services we offer. If you have any questions or would like to book a tour, please dont hesitate to contact us.";
 
         SEOTools::setTitle('My Tour Bali | Travel Bali | Tour & Travel Bali');
@@ -41,7 +41,6 @@ class PackageController extends Controller
         JsonLdMulti::setDescription($description);
         JsonLdMulti::setType('WebPage');
         JsonLdMulti::addImage('/img/logo-image.png');
-
         return view(
             'web.homepage',
             [
@@ -51,10 +50,14 @@ class PackageController extends Controller
                         ->where('name', 'not like', '%dinner%')
                         ->where('name', 'not like', '%coffee%')
                         ->where('name', 'not like', '%breakfast%');
+                })->whereNotIn('package_id', function ($q) {
+                    $q->select('id')
+                        ->from('packages')
+                        ->where('category_id', 2);
                 })->get(),
                 'packages' => Package::where('category_id', 1)->get(),
                 'reviews' => Review::all()
-            ]
+            ],
         );
     }
 

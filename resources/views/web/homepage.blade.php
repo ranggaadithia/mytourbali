@@ -89,7 +89,7 @@
         <a href="/tour/{{ $destination->package->slug }}#{{ $destination->name }}" class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4">
           <div class="w-full md:h-64 h-56 rounded-xl shadow-lg overflow-hidden relative group">
             <div class="h-16 w-full z-20 absolute bottom-0 flex items-center justify-center backdrop-blur-xl px-2">
-              <h4 class="text-white text-center font-subtitle text-xl z-30">{{ $destination->name }}</h4>
+              <h4 class="text-white text-center font-subtitle text-xl z-30">{{ $destination->name}}</h4>
             </div>
             <img src="{{ asset('storage/'. $destination->photo[0]->image) }}" alt="{{ $destination->name }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out" loading="lazy">
           </div>
