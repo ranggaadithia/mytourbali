@@ -23,6 +23,8 @@ class PackageController extends Controller
      */
     public function index()
     {
+
+        return Destination::with('package', 'photo')->get();
         $description = "Welcome to My Tour Bali, your premier travel and tourism agency located in the beautiful island of Bali. We offer a wide range of services, including airport transfers, tour packages, and car rentals. Our tour packages are designed to showcase the best of what Bali has to offer, from its stunning beaches and vibrant culture to its rich history and natural beauty. Our team of professional and friendly drivers will ensure that you have a safe and comfortable journey while exploring Bali. We invite you to browse our website and learn more about the services we offer. If you have any questions or would like to book a tour, please dont hesitate to contact us.";
 
         SEOTools::setTitle('My Tour Bali | Travel Bali | Tour & Travel Bali');
@@ -34,13 +36,14 @@ class PackageController extends Controller
             "Bali Tour", "Bali Vacation", "Bali Travel", "Bali Trip", "Bali Holidays",
             "Bali Adventure", "Bali Excursions", "Bali Itinerary", "Bali Tour Packages",
             "Bali Sightseeing", "Bali Activities", "Bali Experience", "Bali Destinations",
-            "Bali Culture", "Bali Exploration"
+            "Bali Culture", "Bali Exploration", "Bali Activity"
         ]);
 
         JsonLdMulti::setTitle("My Tour Bali | Travel Bali | Tour & Travel Bali");
         JsonLdMulti::setDescription($description);
         JsonLdMulti::setType('WebPage');
         JsonLdMulti::addImage('/img/logo-image.png');
+
         return view(
             'web.homepage',
             [
