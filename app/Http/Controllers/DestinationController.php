@@ -18,7 +18,8 @@ class DestinationController extends Controller
      */
     public function index(Package $package)
     {
-        return view('destination.index', compact('package'));
+        $destinations = $package->destinations()->orderBy('order', 'asc')->get();
+        return view('destination.index', compact('package', 'destinations'));
     }
 
     /**
@@ -92,12 +93,13 @@ class DestinationController extends Controller
      */
     public function update(Request $request, Destination $destination)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-            'description' => 'required',
-        ]);
+        // $validator = Validator::make($request->all(), [
+        //     'name' => 'required|max:255',
+        //     'description' => 'required',
+        //     'order' => 'required'
+        // ]);
 
-        $validated = $validator->validated();
+        // $validated = $validator->validated();
 
         if ($request->file('photos')) {
             foreach ($request->file('photos') as $photoDestination) {
@@ -109,7 +111,14 @@ class DestinationController extends Controller
             }
         }
 
-        Destination::where('id', $destination->id)->update($validated);
+        $destination = Destination::find($destination->id);
+        $destination->name = $request->name;
+        $destination->description = $request->description;
+        $destination->order = $request->order;
+
+        $destination->save();
+
+        // Destination::where('id', $destination->id)->save($validated);
 
         return redirect()->route('destination.index', $request->packageID)->with('status', "Destination successfully Updated");
     }

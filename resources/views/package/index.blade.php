@@ -43,7 +43,7 @@
                 </td>
                 <td class="text-sm text-white font-light px-6 py-4 whitespace-nowrap w-9">
                   <ul>
-                  @foreach ($package->destinations as $destination)
+                  @foreach ($package->destinations()->orderBy('order', 'asc')->get() as $destination)
                       <li >{{ $destination->name }}</li>
                   @endforeach
                   </ul>

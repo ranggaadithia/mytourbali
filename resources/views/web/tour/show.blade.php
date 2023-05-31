@@ -16,7 +16,7 @@
   <section class="tour" id="tour">
     <div class="container mx-auto mt-20 px-4 lg:px-20">
       <h1 class="text-center text-3xl font-title">Tour Destination</h1>
-      @foreach ($package->destinations as $destination)
+      @foreach ($destinations as $destination)
       <section id="{{ $destination->name }}">
         <div class="flex flex-col md:flex-row justify-evenly lg:items-center">
           <div class="w-full md:w-1/2 md:pr-5 lg:pr-20">

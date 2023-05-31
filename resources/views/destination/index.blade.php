@@ -34,7 +34,7 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach ($package->destinations as $destination)
+                @foreach ($destinations as $destination)
                 <tr class="border-b">
                   <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">{{ $loop->iteration }}</td>
                   <td class="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
