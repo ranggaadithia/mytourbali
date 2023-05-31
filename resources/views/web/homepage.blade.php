@@ -142,7 +142,7 @@
                   </div>
                   <div class="w-full md:w-1/2 p-4 md:py-12 md:px-4">
                     <h2 class="text-xl font-subtitle font-semibold mb-1 md:text-2xl md:mb-3 text-gray-700">{{ $photo->destination->name }}</h2>
-                    <p>{{ $photo->destination->description }}</p>
+                    {{-- <p>{{ $photo->destination->description }}</p> --}}
                   </div>
                 </div>
               </div>

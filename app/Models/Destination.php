@@ -39,8 +39,6 @@ class Destination extends Model
         }
     }
 
-
-
     public static function boot()
     {
         parent::boot();
@@ -55,7 +53,6 @@ class Destination extends Model
                 $existingOrder = self::where('order', $destination->order)->where('id', '<>', $destination->id)->first();
 
                 if ($existingOrder) {
-                    // Naikkan urutan destinasi yang memiliki order yang sama atau lebih besar
                     self::where('order', '>=', $destination->order)
                         ->where('id', '<>', $destination->id)
                         ->increment('order');

@@ -42,6 +42,13 @@ Route::get('/airport', function () {
         'title' => 'Airport'
     ]);
 });
+Route::get('/top-destinations', function () {
+    return view('web.top-destination', [
+        'title' => 'THE TOP 10 Full Day Tours | My Tour Bali',
+        'packages' => Package::where('category_id', 1)->get()
+    ]);
+});
+
 Route::get('/cars', function () {
     return view('web.cars', [
         'title' => 'Cars Charter Services'
