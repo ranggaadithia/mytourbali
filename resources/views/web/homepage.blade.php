@@ -14,7 +14,7 @@
 
 
   {{-- about --}}
-  <section class="about" id="about">
+  {{-- <section class="about" id="about">
     <div class="container mx-auto px-4 lg:px-20 py-20">
       <h1  class="text-center font-title text-3xl mb-3 mb:text-6xl">My Tour Bali</h1>
       <div class="line-pattern mx-auto"></div>
@@ -34,10 +34,11 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
+
 
   {{-- services --}}
-  <section class="services" id="services">
+  {{-- <section class="services" id="services">
     <div class="py-20 w-full bg-gray-200 px-10 md:px-2 lg:px-20">
       <div class="container mx-auto">
         <h1 class="title">Services</h1>
@@ -78,7 +79,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   {{-- destinations --}}
   <section class="destinations" id="destinations">
