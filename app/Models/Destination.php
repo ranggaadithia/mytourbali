@@ -11,6 +11,11 @@ class Destination extends Model
 
     protected $guarded = ['id'];
 
+    public function search($keyword)
+    {
+        return $this->where('name', 'LIKE', '%' . $keyword . '%')->get();
+    }
+
     public function package()
     {
         return $this->belongsTo(Package::class);

@@ -1,5 +1,15 @@
 // const { add } = require("lodash");
 
+const buttonSearch = document.querySelector("#button-search");
+const inputSearch = document.querySelector("#input-search");
+const navMenu = document.querySelector("#nav-menu");
+
+buttonSearch.addEventListener("click", function() {
+  inputSearch.classList.toggle("hidden");
+  navMenu.classList.toggle("hidden");
+
+});
+
 const close = document.querySelectorAll('#close');
 const showModal = document.querySelectorAll('#showModal');
 const modal = document.querySelectorAll('#modal');
@@ -72,17 +82,17 @@ const imageShow = new Swiper('.swiperDes', {
   grabCursor: true,
 });
 
-const card = document.querySelectorAll("#card")
+// const card = document.querySelectorAll("#card")
 
-for(i = 0; i < card.length; i++)
-{
-  if(i % 2 == 0) {
-    card[i].classList.add('order-last')
-  } else {
-    card[i].classList.add('order-first')
-  }
+// for(i = 0; i < card.length; i++)
+// {
+//   if(i % 2 == 0) {
+//     card[i].classList.add('order-last')
+//   } else {
+//     card[i].classList.add('order-first')
+//   }
 
-}
+// }
 
 
 const desciptionList = document.querySelectorAll("#description ul");

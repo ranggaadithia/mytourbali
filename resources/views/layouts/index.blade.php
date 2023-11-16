@@ -36,7 +36,6 @@
     href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
   />
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css"  rel="stylesheet" />
 </head>
 <body class="font-poppins">
   @yield('container')
@@ -47,6 +46,5 @@
   ><i class="icofont-brand-whatsapp icofont-2x"></i></a>
 
   <script src="/js/script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
 </body>
 </html>
