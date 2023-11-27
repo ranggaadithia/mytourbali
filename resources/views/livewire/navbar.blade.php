@@ -22,14 +22,14 @@
           <a class="bg-emerald-600 text-white rounded-lg w-32 text-center py-3 px-4 ml-2 font-subtitle font-semibold text-md hover:bg-emerald-500 transition-colors hidden md:block" href="{{ config('app.whatsapp') }}">Book Now!</a>
         </div>
         <div class="container mx-auto px-5 md:px-20 flex flex-wrap items-center justify-between lg:justify-evenly mt-0 py-3 md:py-2 relative border-t-2" id="nav-menu">
-            <ul>
+            {{-- <ul>
                 @foreach ($destinations as $destination)
                     <li wire:key="{{ $destination->id }}">
                         {{ $destination->package->slug }}
                         {{ $destination->photo[0]->image }}
                         {{ $destination->name }}</li>
                 @endforeach
-            </ul>
+            </ul> --}}
           <a href="/activities" class="flex items-center"><i class="icofont-island-alt text-emerald-600 text-2xl"></i> <span class="ml-1">Activities</span></a>
           <a href="/airport" class="flex items-center"><i class="icofont-airplane-alt text-emerald-600 text-2xl"></i> <span class="ml-1">Airport Transfer</span></a>
           <a href="#tour-packages" class="flex items-center"><i class="icofont-direction-sign text-emerald-600 text-2xl"></i> <span class="ml-1">Tours</span></a>
