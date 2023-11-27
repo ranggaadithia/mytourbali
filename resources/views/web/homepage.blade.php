@@ -6,8 +6,8 @@
   
   {{-- jumbotron --}}
     <div class="bg-[url('../../public/img/cliff.jpg')] min-w-screen h-screen bg-cover bg-no-repeat bg-fixed bg-center relative flex items-center justify-center flex-col after:content-[''] after:block after:w-full after:h-screen after:absolute after:top-0 after:bg-gradient-to-b after:from-black/30 -z-10">
-      <div class="container mx-auto z-10 text-center">
-        <h1 class="text-5xl text-white leading-relaxed font-title mb-1">Enjoy your Holiday in Bali Island</h1>
+      <div class="container mx-auto z-50 text-center">
+        <h1 class="text-5xl text-white leading-relaxed font-title mb-1">Enjoy your Holiday in Bali with <br> MyTourBali</h1>
         <div class="line-pattern mx-auto"></div>
       </div>
     </div>

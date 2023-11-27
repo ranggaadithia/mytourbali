@@ -31,7 +31,7 @@
                 @endforeach
             </ul> --}}
           <a href="/activities" class="flex items-center"><i class="icofont-island-alt text-emerald-600 text-2xl"></i> <span class="ml-1">Activities</span></a>
-          <a href="/airport" class="flex items-center"><i class="icofont-airplane-alt text-emerald-600 text-2xl"></i> <span class="ml-1">Airport Transfer</span></a>
+          <a href="/airport" class="flex flex-row items-center"><i class="icofont-airplane-alt text-emerald-600 text-2xl"></i> <span class="ml-1">Airport <span class="hidden md:inline">Transfer</span></span></a>
           <a href="#tour-packages" class="flex items-center"><i class="icofont-direction-sign text-emerald-600 text-2xl"></i> <span class="ml-1">Tours</span></a>
         </div>
       </nav>
