@@ -16,7 +16,10 @@ class PhotoController extends Controller
      */
     public function index()
     {
-        //
+        return view('photo.index', [
+            'title' => 'Photos',
+            'photos' => Photos::orderBy('created_at', 'desc')->paginate(35),
+        ]);
     }
 
     /**
@@ -37,7 +40,16 @@ class PhotoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->file('photos')) {
+            foreach ($request->file('photos') as $photoDestination) {
+                $photo = new Photos;
+                $path = $photoDestination->store('photos');
+                $photo->image = $path;
+                $photo->save();
+            }
+        }
+
+        return back();
     }
 
     /**

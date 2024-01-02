@@ -62,7 +62,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::resource('photo', PhotoController::class)->only('destroy');
+    Route::resource('photo', PhotoController::class);
     Route::resource('review', ReviewController::class);
     Route::resource('/package', PackageDashboard::class);
     Route::get('package/destination/{package:id}', [DestinationController::class, 'index'])->name('destination.index');
