@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Destination;
 use App\Models\Photos;
 use App\Models\Review;
+use App\Models\Video;
 use Artesaos\SEOTools\Facades\SEOTools;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
@@ -62,7 +63,8 @@ class PackageController extends Controller
                         ->where('category_id', 2);
                 })->get(),
                 'packages' => Package::where('category_id', 1)->get(),
-                'reviews' => Review::all()
+                'reviews' => Review::all(),
+                'videos' => Video::all(),
             ],
         );
     }

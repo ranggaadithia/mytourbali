@@ -131,6 +131,7 @@
     <div class="container mx-auto">
       <div class="py-20 mx auto px-10 bg-dark-200">
         <h1 class="title">Gallery</h1>
+        <h3 class="text-center text-xl font-medium">Photos</h3>
         <div class="flex flex-row gap-y-4 items-center justify-between flex-wrap">
           @foreach ($photos->shuffle()->take(10) as $photo)    
           <button class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4" id="showModal" onclick="return {{ $photo->id }}">
@@ -149,6 +150,39 @@
                   </div>
                   {{-- <div class="w-full md:w-1/2 p-4 md:py-12 md:px-4">
                     <h2 class="text-xl font-subtitle font-semibold mb-1 md:text-2xl md:mb-3 text-gray-700">{{ $photo->destination->name }}</h2>
+                    <p>{{ $photo->destination->description }}</p>
+                  </div> --}}
+                </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+        </div>
+        <h3 class="text-center text-xl font-medium mt-10">Videos</h3>
+        <div class="flex flex-row gap-y-4 items-center justify-between flex-wrap">
+          @foreach ($videos->shuffle()->take(10) as $video)    
+          <button class="basis-1/2 md:basis-1/3 lg:basis-1/5 px-2 md:px-4" id="showModal" onclick="return {{ $video->id }}">
+            <div class="w-full md:h-48 h-40 rounded-xl shadow-lg relative overflow-hidden group bg-black">
+              <img src="{{ asset('storage/'.$video->thumbnail) }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out" loading="lazy">
+            </div>
+          </button>
+          <div class="relative z-30 hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="modal">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+            <div class="fixed inset-0 z-30 overflow-y-auto">
+              <div class="flex min-h-full items-center justify-center p-0 text-center sm:items-center sm:p-0">
+                <div class="relative transform rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 h-auto lg:h-96 flex flex-col md:flex-row mt-32">
+                  <div class="w-full pt-10">
+                    <iframe width="315" height="560"
+                      src="https://www.youtube.com/embed/{{ $video->url }}"
+                      title="YouTube video player" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media;
+                      gyroscope;
+                      web-share"
+                      allowfullscreen></iframe>
+                    <button class="absolute top-0 right-3 text-4xl text-black z-50" id="close">&times;</button>
+                  </div>
+                  {{-- <div class="w-full md:w-1/2 p-4 md:py-12 md:px-4">
+                    <h2 class="text-xl font-subtitle font-semibold mb-1 md:text-2xl md:mb-3 text-gray-700">{{ $video->destination->name }}</h2>
                     <p>{{ $photo->destination->description }}</p>
                   </div> --}}
                 </div>

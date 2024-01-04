@@ -1,20 +1,21 @@
 <?php
 
-use App\Http\Controllers\ActivityController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DestinationController;
-use App\Http\Controllers\PackageController;
-use App\Http\Controllers\PackageDashboard;
-use App\Http\Controllers\PhotoController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ReviewController;
-use App\Models\Destination;
-use App\Models\Package;
 use App\Models\Photos;
 use App\Models\Review;
-use Illuminate\Support\Facades\Storage;
-
+use App\Models\Package;
+use App\Models\Destination;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\VideoController;
+use App\Http\Controllers\PackageDashboard;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\PackageController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ActivityController;
+
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DestinationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +69,7 @@ Route::middleware('auth')->group(function () {
     Route::get('package/destination/{package:id}', [DestinationController::class, 'index'])->name('destination.index');
     Route::get('package/destination/{package:id}/create', [DestinationController::class, 'create'])->name('destination.create');
     Route::resource('package/destination', DestinationController::class)->except('index', 'create');
+    Route::resource('videos', VideoController::class);
 });
 
 
