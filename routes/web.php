@@ -36,7 +36,7 @@ Route::domain('links.' . config('app.domain'))->group(function () {
 });
 
 Route::resource('/', PackageController::class);
-Route::get('/tour/{package:slug}', [PackageController::class, 'show']);
+Route::get('/tour/{package:slug}', [PackageController::class, 'show'])->name('package.show');
 Route::get('/destination/{package:id}', [PackageController::class, 'show']);
 Route::get('/airport', function () {
     return view('web.airport', [

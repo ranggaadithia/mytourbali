@@ -39,11 +39,17 @@
 </head>
 <body class="font-poppins">
   @yield('container')
-  <a
-    href="{{ config('app.whatsapp') }}"
-    class="inline-block p-3 bg-[#25d366] text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-[#128c7e]hover:shadow-lg  focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out bottom-5 right-5 fixed z-50"
-    id="WhatsApp"
-  ><i class="icofont-brand-whatsapp icofont-2x"></i></a>
+
+  @if (!Route::is('package.show'))
+    <a
+       href="{{ config('app.whatsapp') }}?text=I'm%20interested%20in%20the%20services%20offered%20on%20your%20website.%20Could%20I%20get%20more%20details?"
+        class="inline-block p-3 bg-[#25d366] text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-[#128c7e] hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out bottom-5 right-5 fixed z-50"
+        id="WhatsApp"
+    >
+        <i class="icofont-brand-whatsapp icofont-2x"></i>
+    </a>
+  @endif
+
 
   <script src="/js/script.js"></script>
 </body>

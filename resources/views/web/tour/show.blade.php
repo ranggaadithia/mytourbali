@@ -4,18 +4,18 @@
 
   @include('components.navbar')
 
-  <div class="w-full h-screen relative flex items-center justify-center after:content-[''] after:block after:w-full after:h-screen after:absolute after:top-0 after:bg-gradient-to-b after:from-black/30">
+  {{-- <div class="w-full h-screen relative flex items-center justify-center after:content-[''] after:block after:w-full after:h-screen after:absolute after:top-0 after:bg-gradient-to-b after:from-black/30">
     <div class="absolute pb-12 z-10">
       <h1 class="text-white font-title text-5xl">{{ $package->name }}</h1>
       <div class="line-pattern mx-auto mt-2"></div>
     </div>
     <img src="{{ asset('storage/'.$package->image) }}" alt="" class="w-full h-screen object-cover">
-  </div>
+  </div> --}}
 
 
   <section class="tour" id="tour">
-    <div class="container mx-auto mt-20 px-4 lg:px-20">
-      <h1 class="text-center text-3xl font-title">Tour Destination</h1>
+    <div class="container mx-auto mt-32 px-4 lg:px-20">
+      <h1 class="text-center text-3xl font-title">{{ $package->name }} Itenerary</h1>
       @foreach ($destinations as $destination)
       <section id="{{ $destination->name }}">
         <div class="flex flex-col md:flex-row justify-evenly lg:items-center">
@@ -68,6 +68,16 @@
       <a href="{{ config('app.whatsapp') }}" class="button mt-3"><i class="icofont-brand-whatsapp"></i> Contact Us</a>
     </div>
   </section>
+
+  <section id="booking">
+    <div class="w-full shadow-inner py-3 px-10 bg-white fixed bottom-0 flex items-center">
+      <a href="{{ config('app.whatsapp') }}?text=Hello,%20I'm%20interested%20in%20the%20{{ urlencode($package->name) }}%20tour%20package%20I%20found%20on%20your%20website.%20Could%20I%20get%20more%20details?" 
+         class="text-center block py-3 w-full bg-[#25d366] text-white font-semibold text-base leading-tight uppercase rounded-lg shadow-md hover:bg-[#128c7e] hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">
+        <i class="icofont-brand-whatsapp icofont"></i> Booking on WhatsApp
+      </a>
+    </div>
+  </section>
+  
 
   @include('components.footer')
   
