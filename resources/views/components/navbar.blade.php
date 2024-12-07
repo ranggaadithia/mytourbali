@@ -21,7 +21,7 @@
   </div>
   <div class="container mx-auto px-5 md:px-20 flex flex-wrap items-center justify-between lg:justify-evenly mt-0 py-3 md:py-2 relative border-t-2" id="nav-menu">
     <a href="/activities" class="flex items-center"><i class="icofont-island-alt text-emerald-600 text-2xl"></i> <span class="ml-1">Activities</span></a>
-    <a href="/airport" class="flex items-center"><i class="icofont-airplane-alt text-emerald-600 text-2xl"></i> <span class="ml-1">Airport Transfer</span></a>
+    <a href="/airport" class="flex items-center"><i class="icofont-airplane-alt text-emerald-600 text-2xl"></i> <span class="ml-1">Airport</span></a>
     <a href="#tour-packages" class="flex items-center"><i class="icofont-direction-sign text-emerald-600 text-2xl"></i> <span class="ml-1">Tours</span></a>
   </div>
 </nav>

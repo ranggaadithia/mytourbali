@@ -37,10 +37,22 @@ class PackageController extends Controller
         SEOTools::opengraph()->addProperty('type', 'WebPage');
         OpenGraph::addImage(asset('/img/logo-image.png'));
         SEOMeta::addKeyword([
-            "Bali Tour", "Bali Vacation", "Bali Travel", "Bali Trip", "Bali Holidays",
-            "Bali Adventure", "Bali Excursions", "Bali Itinerary", "Bali Tour Packages",
-            "Bali Sightseeing", "Bali Activities", "Bali Experience", "Bali Destinations",
-            "Bali Culture", "Bali Exploration", "Bali Activity"
+            "Bali Tour",
+            "Bali Vacation",
+            "Bali Travel",
+            "Bali Trip",
+            "Bali Holidays",
+            "Bali Adventure",
+            "Bali Excursions",
+            "Bali Itinerary",
+            "Bali Tour Packages",
+            "Bali Sightseeing",
+            "Bali Activities",
+            "Bali Experience",
+            "Bali Destinations",
+            "Bali Culture",
+            "Bali Exploration",
+            "Bali Activity"
         ]);
 
         JsonLdMulti::setTitle("My Tour Bali | Travel Bali | Tour & Travel Bali");
@@ -74,9 +86,7 @@ class PackageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-    }
+    public function create() {}
 
     /**
      * Store a newly created resource in storage.
