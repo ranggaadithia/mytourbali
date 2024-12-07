@@ -109,41 +109,42 @@
   {{-- tour packages --}}
   <section class="tour-packages" id="tour-packages">
     <div class="py-20 w-full bg-gray-200">
-      <div class="container lg:px-20 md:px-4 px-10 mx-auto">
-        <h1 class="title">Tour Packages</h1>
-        <div class="flex flex-col md:flex-row gap-y-6 items-center justify-center md:justify-start flex-wrap">
-        @foreach ($packages as $package)
-        <div class="basis-1/2 md:basis-1/3 lg:basis-1/3 px-2 md:px-4">
-          <a href="/tour/{{ $package->slug }}" class="">
-            <div class="w-full md:h-64 h-56 rounded-xl shadow-lg overflow-hidden relative group">
-              <div class="w-full z-20 absolute bottom-0 flex flex-col justify-center bg-white px-5">
-                <h4 class="text-gray-700 text-center font-subtitle font-bold text-xl">{{ $package->name }}</h4>
-                <p class="py-3 text-gray-600">Itinerary: 
-                  {{ \Illuminate\Support\Str::limit(
-                      $package->destinations->pluck('name')->implode(', '),
-                      100,
-                      '...'
-                  ) }}
-              </p>
-              
-                <h5 class="text-lg font-semibold">Start from Rp. {{ $package->price }}K</h5>
+      <div class="container md:px-4 px-4 mx-auto">
+        <h1 class="title text-3xl md:text-4xl font-bold mb-10 text-center">Tour Packages</h1>
+        <div class="flex flex-wrap gap-y-6 justify-center">
+          @foreach ($packages as $package)
+          <div class="basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/3 px-2 sm:px-3 md:px-4">
+            <a href="/tour/{{ $package->slug }}" class="block">
+              <div class="w-full h-96 md:h-96 rounded-xl shadow-lg overflow-hidden relative group">
+                <img src="{{ asset('storage/'.$package->image_cover) }}" alt="{{ $package->name }}" class="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy">
+                <div class="w-full z-20 absolute bottom-0 bg-white bg-opacity-90 px-5 py-4">
+                  <h4 class="text-gray-700 text-center font-subtitle font-bold text-xl ">{{ $package->name }}</h4>
+                  <p class="py-2 text-gray-600 text-sm md:text-base">Itinerary: 
+                    {{ \Illuminate\Support\Str::limit(
+                        $package->destinations->pluck('name')->implode(', '),
+                        50,
+                        '...'
+                    ) }}
+                  </p>
+                  <h5 class="text-lg mb-1 font-semibold">Start from Rp. {{ $package->price }}K</h5>
+                </a>
+                <div class="flex items-center justify-between py-3 border-t-2">
+                  <a href="/tour/{{ $package->slug }}" class="underline decoration-emerald-500 text-emerald-500">View Details</a>
+                  <a href="{{ config('app.whatsapp') }}?text=Hello,%20I'm%20interested%20in%20the%20{{ urlencode($package->name) }}%20tour%20package%20I%20found%20on%20your%20website.%20Could%20I%20get%20more%20details?" 
+                    class="text-center block py-3 w-3/5 bg-[#25d366] text-white font-semibold text-base leading-tight uppercase rounded-lg shadow-md hover:bg-[#128c7e] hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">
+                   <i class="icofont-brand-whatsapp icofont"></i> Booking Now!
+                 </a>
+                </div>
               </div>
-              <img src="{{ asset('storage/'.$package->image_cover) }}" alt="{{ $package->name }}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out" loading="lazy">
             </div>
-          </a>
-        </div>
-          {{-- <div class="md:basis-1/2 lg:basis-1/3 md:px-6 w-full">
-            <div class="rounded-xl shadow-lg relative flex flex-col justify-between items-center h-[26rem] overflow-hidden after:content-[''] after:block after:absolute after:inset-0 after:bg-gradient-to-b after:from-black/30 group cursor-pointer">
-              <img src="{{ asset('storage/'.$package->image_cover) }}" alt="{{ $package->name }}" class="absolute w-full h-full object-cover group-hover:scale-110 transition duration-300 ease-in-out" loading="lazy">
-              <h4 class="text-white mt-10 z-20 text-center font-subtitle text-2xl group-hover:mt-12 transition-all duration-300 ease-in-out">{{ $package->name }}</h4>
-              <a href="/tour/{{ $package->slug }}" class="button z-20 lg:opacity-0 mb-12 lg:group-hover:opacity-100 transition duration-300 ease-in-out">Read More</a>
-            </div>
-          </div> --}}
-        @endforeach
+          </div>
+          @endforeach
         </div>
       </div>
     </div>
   </section>
+  
+  
 
   {{-- gallery --}}
   <section class="gallery" id="gallery">

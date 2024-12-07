@@ -70,7 +70,11 @@
   </section>
 
   <section id="booking">
-    <div class="w-full z-50 shadow-inner py-3 px-10 bg-white fixed bottom-0 flex items-center">
+    <div class="w-full z-50 shadow-inner py-3 px-10 bg-white fixed bottom-0">
+      <div class="w-full pb-2 flex justify-between">
+        <h5 class="text-base font-medium">Start From</h5>
+        <h5 class="text-base font-semibold">Only Rp. {{ $package->price }}K</h5>
+      </div>
       <a href="{{ config('app.whatsapp') }}?text=Hello,%20I'm%20interested%20in%20the%20{{ urlencode($package->name) }}%20tour%20package%20I%20found%20on%20your%20website.%20Could%20I%20get%20more%20details?" 
          class="text-center block py-3 w-full bg-[#25d366] text-white font-semibold text-base leading-tight uppercase rounded-lg shadow-md hover:bg-[#128c7e] hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out">
         <i class="icofont-brand-whatsapp icofont"></i> Booking on WhatsApp
